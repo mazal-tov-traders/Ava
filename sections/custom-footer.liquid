@@ -1,0 +1,370 @@
+<div class="footer_wrapper">
+  <div class="page-width">
+    <div class="inner-footer-menu">
+      <div class="wrapper-logo">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'image' -%}
+              <div class="footer__img-logo">
+                {% if block.settings.image != blank %}
+                  {{ block.settings.image | image_url: width: 115 | image_tag: class: 'image' }}
+                {% endif %}
+                {% if block.settings.image_mob != blank %}
+                  {{ block.settings.image_mob | image_url: width: 150 | image_tag: class: 'image-mob' }}
+                {% endif %}
+              </div>
+            {%- when 'phone' -%}
+              {%- if block.settings.phone_number != blank -%}
+                <div class="phone_wrapper mobile_phone_wrapper">
+                  {% if block.settings.icon != blank %}
+                    {{ block.settings.icon | image_url: width: 24 | image_tag: class: 'icon' }}
+                  {% endif %}
+                  {% if block.settings.phone_number != blank %}
+                    <a href="tel:{{ block.settings.phone_number }}" class="phone__number">
+                      {{- block.settings.phone_number -}}
+                    </a>
+                  {% endif %}
+                </div>
+              {% endif %}
+          {%- endcase -%}
+        {%- endfor -%}
+        {% comment %}  {% endcomment %}
+        <ul class="list list-social list-unstyled" role="list">
+          {%- if settings.social_facebook_link != blank -%}
+            <li class="list-social__item">
+              <a href="{{ settings.social_facebook_link }}" class="list-social__link link">
+                {%- render 'icon-facebook' -%}
+                <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
+              </a>
+            </li>
+          {%- endif -%}
+          {%- if settings.social_instagram_link != blank -%}
+            <li class="list-social__item">
+              <a href="{{ settings.social_instagram_link }}" class="list-social__link link">
+                {%- render 'icon-instagram' -%}
+                <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+              </a>
+            </li>
+          {%- endif -%}
+        </ul>
+        {% comment %}  {% endcomment %}
+      </div>
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'link_list' -%}
+            {%- if block.settings.menu != blank -%}
+              <div class="custom-footer-menu">
+                {%- for link in block.settings.menu.links -%}
+                  <div class="footer__link-menu">
+                    <a
+                      href="{{ link.url }}"
+                      class="custom-link"
+                      id="navigation-anchor__link"
+                    >
+                      {{ link.title }}
+                    </a>
+                  </div>
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
+        {%- endcase -%}
+      {%- endfor -%}
+      <div
+        class="footer-block--newsletter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+        {% endif %}
+      >
+        {%- if section.settings.newsletter_enable -%}
+          <div class="footer-block__newsletter">
+            {%- if section.settings.newsletter_heading != blank -%}
+              <h2 class="heading">{{ section.settings.newsletter_heading }}</h2>
+            {%- endif -%}
+            {%- if section.settings.content != blank -%}
+              <h3 class="content">{{ section.settings.content }}</h3>
+            {%- endif -%}
+            {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <div class="newsletter-form__field-wrapper">
+                <div class="field">
+                  <input
+                    id="NewsletterForm--{{ section.id }}"
+                    type="email"
+                    name="contact[email]"
+                    class="field__input"
+                    value="{{ form.email }}"
+                    aria-required="true"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    autocomplete="email"
+                    {% if form.errors %}
+                      autofocus
+                      aria-invalid="true"
+                      aria-describedby="ContactFooter-error"
+                    {% elsif form.posted_successfully? %}
+                      aria-describedby="ContactFooter-success"
+                    {% endif %}
+                    placeholder="{{ 'newsletter.label' | t }}"
+                    required
+                  >
+
+                  <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                    {{ 'newsletter.label' | t }}
+                  </label>
+
+                  <button
+                    type="submit"
+                    class="btn-subscribe"
+                    name="commit"
+                    id="Subscribe"
+                    aria-label="{{ 'newsletter.button_label' | t }}"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+                {%- if form.errors -%}
+                  <small class="newsletter-form__message form__message" id="ContactFooter-error">
+                    {%- render 'icon-error' -%}
+                    {{- form.errors.translated_fields.email | capitalize }}
+                    {{ form.errors.messages.email -}}
+                  </small>
+                {%- endif -%}
+              </div>
+              {%- if form.posted_successfully? -%}
+                <h3
+                  class="newsletter-form__message newsletter-form__message--success form__message"
+                  id="ContactFooter-success"
+                  tabindex="-1"
+                  autofocus
+                >
+                  {% render 'icon-success' -%}
+                  {{- 'newsletter.success' | t }}
+                </h3>
+              {%- endif -%}
+            {%- endform -%}
+          </div>
+        {%- endif -%}
+        {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
+          <div class="footer__follow-on-shop">
+            {% comment %} TODO: enable theme-check once `login_button` is accepted as valid filter {% endcomment %}
+            {% # theme-check-disable %}
+            {{ shop | login_button: action: 'follow' }}
+            {% # theme-check-enable %}
+          </div>
+        {%- endif -%}
+      </div>
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'phone' -%}
+            {%- if block.settings.phone_number != blank -%}
+              <div class="phone_wrapper desctop_phone_wrapper">
+                {% if block.settings.icon != blank %}
+                  {{ block.settings.icon | image_url: width: 24 | image_tag: class: 'icon' }}
+                {% endif %}
+                {% if block.settings.phone_number != blank %}
+                  <a href="tel:{{ block.settings.phone_number }}" class="phone__number">
+                    {{- block.settings.phone_number -}}
+                  </a>
+                {% endif %}
+              </div>
+            {% endif %}
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+    <div class="footer__down-inner">
+      <div class="wrapper_chef">
+        <span class="chef_text"> © 2024 Chef Bobo </span>
+      </div>
+      <div class="page-links">
+        <div class="privacy-policy__content">
+          <a
+            {% if section.settings.link_terms_and_conditions == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ section.settings.link_terms_and_conditions }}"
+            {% endif %}
+            class="p-link"
+            >Terms and Conditions</a
+          >
+          |
+          <a
+            {% if section.settings.link_police == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ section.settings.link_police }}"
+            {% endif %}
+            class="p-link"
+            >Privacy Policy</a
+          >
+          |
+          <a
+            {% if section.settings.link_accessibility == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ section.settings.link_accessibility }}"
+            {% endif %}
+            class="p-link"
+          >
+            Accessibility
+          </a>
+          |
+          <a
+            {% if section.settings.link_terms_use == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ section.settings.link_terms_use }}"
+            {% endif %}
+            class="p-link"
+            >Terms of Use</a
+          >
+          |
+          <a
+            {% if section.settings.link_terms_use == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ section.settings.link_terms_use }}"
+            {% endif %}
+            class="p-link"
+            >Ad Choices</a
+          >
+        </div>
+        <div class="web_loft">
+          <span class="web_loft-text"
+            >Dallas and Plano Web Design Agency:<a
+              class="web_loft_link"
+              href="https://www.webloftdesigns.com/"
+              target="_blank"
+              >Web Loft Designs</a
+            ></span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%- style -%}
+  #shopify-section-{{ section.id }}{
+    .footer_wrapper{
+      @media screen and (min-width: 750px) {
+          background-image: url({{ section.settings.image | image_url: width: 1920 }});
+      }
+      @media screen and (max-width: 749px) {
+          background-image: url({{ section.settings.image_mob | image_url: width: 749 }});
+      }
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "Custom Footer",
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "t:sections.footer.blocks.link_list.name",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "t:sections.footer.blocks.link_list.settings.menu.label",
+          "info": "t:sections.footer.blocks.link_list.settings.menu.info"
+        }
+      ]
+    },
+    {
+      "type": "phone",
+      "name": "Phone",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "phone_number",
+          "label": "Phone Number"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "logo"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mob",
+          "label": "mobile logo"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mob",
+      "label": "Mobil background image"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__1.content",
+      "info": "t:sections.footer.settings.header__1.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "newsletter_enable",
+      "default": true,
+      "label": "t:sections.footer.settings.newsletter_enable.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "newsletter_heading",
+      "label": "t:sections.footer.settings.newsletter_heading.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "url",
+      "id": "link_terms_and_conditions",
+      "label": "Terms And Conditions Page"
+    },
+    {
+      "type": "url",
+      "id": "link_police",
+      "label": "Policy Page"
+    },
+    {
+      "type": "url",
+      "id": "link_accessibility",
+      "label": "Accessibility Page"
+    },
+    {
+      "type": "url",
+      "id": "link_terms_use",
+      "label": "Terms of Use Page"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Footer"
+    }
+  ]
+}
+{% endschema %}

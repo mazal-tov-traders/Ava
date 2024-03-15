@@ -1,0 +1,355 @@
+.footer_wrapper {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 0 60px;
+  @media screen and (min-width: 749px) {
+    padding: 50px 0 30px;
+  }
+
+  .inner-footer-menu {
+    display: flex;
+    gap: 35px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @media screen and (min-width: 1390px) {
+      gap: 0;
+      justify-content: flex-start;
+    }
+    @media screen and (max-width: 749px) {
+      gap: 0;
+    }
+
+    .wrapper-logo {
+      display: flex;
+      gap: 86px;
+      flex-direction: column;
+      @media screen and (min-width: 1390px) {
+        margin-right: 105px;
+      }
+      @media screen and (max-width: 749px) {
+        margin: 0 auto;
+        gap: 30px;
+        margin-bottom: 53px;
+        width: 100%;
+      }
+      .footer__img-logo {
+        .image-mob {
+          display: none;
+          @media screen and (max-width: 749px) {
+            display: block;
+            margin: 0 auto;
+          }
+        }
+        .image {
+          display: block;
+          @media screen and (max-width: 749px) {
+            display: none;
+          }
+        }
+      }
+
+      .list-social {
+        display: flex;
+        gap: 20px;
+        @media screen and (max-width: 749px) {
+          justify-content: center;
+        }
+      }
+    }
+
+    .custom-footer-menu {
+      @media screen and (min-width: 1390px) {
+        margin-right: 52px;
+      }
+      @media screen and (max-width: 749px) {
+        width: 100%;
+        margin-bottom: 0px;
+      }
+      .footer__link-menu {
+        margin-bottom: 15px;
+        @media screen and (max-width: 749px) {
+            margin-bottom: 19px;
+          }
+        .custom-link {
+          font-family: "BG", sans-serif;
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 29px;
+          letter-spacing: 0em;
+          text-align: left;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: #fff;
+
+          &:hover {
+            text-decoration: underline;
+            text-underline-offset: 0.3rem;
+          }
+        }
+      }
+    }
+    .footer-block__newsletter {
+      @media screen and (min-width: 1390px) {
+        margin-left: 20px;
+      }
+      @media screen and (max-width: 749px) {
+        margin-top: 62px;
+      }
+      .heading {
+        font-family: "BG";
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #fff;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .content {
+        width: 350px;
+        font-family: "Avenir";
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 25px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #fff;
+        max-width: 350px;
+        margin-bottom: 18px;
+      }
+    }
+    .footer__newsletter.newsletter-form {
+      width: 406px;
+      .newsletter-form__field-wrapper {
+        .field::after {
+          border: none;
+        }
+
+        .field:after {
+          box-shadow: none;
+        }
+
+        .field:hover.field:after {
+          box-shadow: none;
+        }
+
+        .field__input:focus {
+          box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width))
+            rgba(255, 255, 255, 1);
+        }
+      }
+      .field__input {
+        border: 1px solid #fff;
+        background: transparent;
+        color: #fff;
+        height: 54px;
+      }
+      .field__label {
+        font-family: "Avenir";
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 25px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #fff !important;
+        top: calc(14px + var(--inputs-border-width));
+        left: calc(var(--inputs-border-width) + 3rem);
+      }
+      .field__input:focus ~ .field__label,
+      .field__input:not(:placeholder-shown) ~ .field__label,
+      .field__input:-webkit-autofill ~ .field__label,
+      .customer .field input:focus ~ label,
+      .customer .field input:not(:placeholder-shown) ~ label,
+      .customer .field input:-webkit-autofill ~ label {
+        display: none;
+      }
+      .btn-subscribe {
+        background: rgba(0, 178, 227, 1);
+        max-width: 159px;
+        width: 100%;
+        border: none;
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        cursor: pointer;
+        font-family: "Avenir";
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 25px;
+        letter-spacing: 0em;
+      }
+    }
+    .phone_wrapper {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      @media screen and (min-width: 1390px) {
+        margin-left: -4px;
+      }
+      @media screen and (max-width: 749px) {
+        justify-content: center;
+      }
+      .phone__number {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+          text-underline-offset: 0.3rem;
+        }
+      }
+      @media screen and (min-width: 500px) {
+        img {
+          margin-top: 3px;
+        }
+      }
+    }
+  }
+}
+.footer__down-inner {
+  margin-top: 55px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  @media screen and (max-width: 500px) {
+    margin-top: 49px;
+  }
+  .wrapper_chef {
+    margin-top: 25px;
+    @media screen and (max-width: 500px) {
+      margin-top: 29px;
+    }
+    .chef_text {
+      color: #fff;
+      text-decoration: none;
+      font-family: "Avenir";
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 25px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+  }
+  .page-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    @media screen and (max-width: 500px) {
+      margin-top: 12px;
+    }
+    .privacy-policy__content {
+      flex-wrap: wrap;
+      align-items: center;
+      @media screen and (max-width: 800px) {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+      }
+      .p-link {
+        color: #fff;
+        text-decoration: none;
+        font-family: "Avenir";
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 25px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 21.6px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #fff;
+      display: flex;
+      gap: 8px;
+    }
+    .web_loft {
+      @media screen and (max-width: 800px) {
+        max-width: 283px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .web_loft-text {
+        color: #fff;
+        text-align: center;
+        font-family: "Avenir";
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 25px;
+        letter-spacing: 0em;
+      }
+      .web_loft_link {
+        text-decoration: underline;
+        color: #fff;
+        padding-left: 2px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .phone_wrapper.mobile_phone_wrapper {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .footer__img-logo {
+    width: 100%;
+    text-align: center;
+  }
+  .phone_wrapper.mobile_phone_wrapper {
+    display: block;
+    img{
+        margin-top: 3px;
+    }
+  }
+  .phone_wrapper.desctop_phone_wrapper {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .footer_wrapper .inner-footer-menu .footer__newsletter.newsletter-form {
+    width: 100%;
+  }
+  .footer_wrapper .inner-footer-menu .footer-block__newsletter .content {
+    width: 100%;
+  }
+  .field {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer_wrapper
+    .inner-footer-menu
+    .footer__newsletter.newsletter-form
+    .btn-subscribe {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .footer__down-inner .page-links .privacy-policy__content {
+    text-align: center;
+  }
+  .web_loft {
+    text-align: center;
+  }
+  .wrapper_chef {
+    text-align: center;
+  }
+}

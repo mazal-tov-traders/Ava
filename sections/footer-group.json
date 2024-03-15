@@ -2,8 +2,56 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "custom_footer_HzVkrd": {
+      "type": "custom-footer",
+      "blocks": {
+        "image_bxVwXB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector_Smart_Object1_1_1.png"
+          }
+        },
+        "link_list_iNVW69": {
+          "type": "link_list",
+          "settings": {
+            "menu": "main-menu"
+          }
+        },
+        "link_list_7cBPJx": {
+          "type": "link_list",
+          "settings": {
+            "menu": "footer-main"
+          }
+        },
+        "phone_67mzLq": {
+          "type": "phone",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Vector.svg",
+            "phone_number": "1-800-977-8912"
+          }
+        }
+      },
+      "block_order": [
+        "image_bxVwXB",
+        "link_list_iNVW69",
+        "link_list_7cBPJx",
+        "phone_67mzLq"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Rectangle_4133617.jpg",
+        "image_mob": "shopify:\/\/shop_images\/Rectangle_4133617_1.jpg",
+        "newsletter_enable": true,
+        "newsletter_heading": "Get Your Ava On",
+        "content": "Sign up for emails to hear about promotions, new flavors and more! And when you do, you'll earn 15% off of your first order.",
+        "link_terms_and_conditions": "",
+        "link_police": "",
+        "link_accessibility": "",
+        "link_terms_use": ""
+      }
+    },
     "footer": {
       "type": "footer",
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
@@ -21,6 +69,7 @@
     }
   },
   "order": [
+    "custom_footer_HzVkrd",
     "footer"
   ]
 }

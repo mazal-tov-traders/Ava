@@ -281,6 +281,32 @@
       }
     </script>
     <script src="{{ 'navigation-anchor.js' | asset_url }}" defer="defer"></script>
+    <style>
+      @font-face {
+        font-family: 'BG';
+        font-style: normal;
+        font-weight: 450;
+        src: url('{{ "brandon-grotesque-regular.ttf" | asset_url }}') format('truetype');
+      }
+      @font-face {
+        font-family: 'Avenir';
+        font-style: normal;
+        font-weight: 600;
+        src: url('{{ "AvenirNextCyr-Bold.ttf" | asset_url }}') format('truetype');
+      }
+      @font-face {
+        font-family: 'Avenir';
+        font-style: normal;
+        font-weight: 500;
+        src: url('{{ "AvenirNextCyr-Demi.ttf" | asset_url }}') format('truetype');
+      }
+      @font-face {
+        font-family: 'Avenir';
+        font-style: normal;
+        font-weight: 400;
+        src: url('{{ "AvenirNextCyr-Medium.ttf" | asset_url }}') format('truetype');
+      }
+    </style>
     {{ 'main.css' | asset_url | stylesheet_tag }}
   </head>
 

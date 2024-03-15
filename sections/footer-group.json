@@ -8,7 +8,8 @@
         "image_bxVwXB": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Vector_Smart_Object1_1_1.png"
+            "image": "shopify:\/\/shop_images\/Vector_Smart_Object1_1_1.png",
+            "image_mob": "shopify:\/\/shop_images\/Wowza_Logo.png"
           }
         },
         "link_list_iNVW69": {

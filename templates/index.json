@@ -39,37 +39,86 @@
         "show_text_below": false
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "custom_slider_product_Ye7JCV": {
+      "type": "custom-slider-product",
+      "blocks": {
+        "product_bxYkcW": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_4133620.png",
+            "border_color": "rgba(0,0,0,0)",
+            "heading": "Love love love",
+            "color_heading_label": "#2E2A2C",
+            "icon": "shopify:\/\/shop_images\/Frame_1212068_1.png",
+            "text": "512 Reviews",
+            "color_text_label": "#2E2A2C",
+            "sub_title": "",
+            "color_sub_title_label": "#2E2A2C",
+            "content": "This is my new favorite snack, so happy to finally see them back in stock. They are delicious, light and not loaded with sugar or calories. Love them ❤️",
+            "color_content_label": "#2E2A2C",
+            "author": "Catjjj",
+            "color_author_label": "#2E2A2C",
+            "date": "July 11, 2023",
+            "color_date_label": "#2E2A2C"
+          }
+        },
+        "product_xLqriL": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_4133620_1.png",
+            "border_color": "rgba(0,0,0,0)",
+            "heading": "Unbelievably delicious!",
+            "color_heading_label": "#2E2A2C",
+            "icon": "shopify:\/\/shop_images\/Frame_1212068_1.png",
+            "text": "612 Reviews",
+            "color_text_label": "#2E2A2C",
+            "sub_title": "",
+            "color_sub_title_label": "#2E2A2C",
+            "content": "Unbelievably delicious!Wow these are organic, and you can tell. No funky chemical\/artificial taste. Only 6 organic ingredients - clean, clean, clean. Not super sweet and the coconut is not cloying. The perfect blend of taste and texture. I bought two bags, and I am not ashamed to admit I will be buying a few more promptly. They are THAT good.",
+            "color_content_label": "#2E2A2C",
+            "author": "Lucy",
+            "color_author_label": "#2E2A2C",
+            "date": "July 11, 2023",
+            "color_date_label": "#2E2A2C"
+          }
+        },
+        "product_GVmQTU": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_4133620_2.png",
+            "border_color": "rgba(0,0,0,0)",
+            "heading": "Great with ice cream",
+            "color_heading_label": "#2E2A2C",
+            "icon": "shopify:\/\/shop_images\/Frame_1212068_1.png",
+            "text": "1512 Reviews",
+            "color_text_label": "#2E2A2C",
+            "sub_title": "",
+            "color_sub_title_label": "#2E2A2C",
+            "content": "These yummy treats are great with ice cream. I would love to see this company make this product as an ice cream cone.",
+            "color_content_label": "#2E2A2C",
+            "author": "Shyla",
+            "color_author_label": "#2E2A2C",
+            "date": "July 11, 2023",
+            "color_date_label": "#2E2A2C"
+          }
+        }
+      },
+      "block_order": [
+        "product_bxYkcW",
+        "product_xLqriL",
+        "product_GVmQTU"
+      ],
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "heading": "See what our friends are saying!",
+        "color_heading_label": "#682145",
+        "icon": "shopify:\/\/shop_images\/Frame_1212068.png",
+        "text": "80,000+ 5-Star Reviews",
+        "color_text_label": "#2E2A2C"
       }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "custom_slider_product_Ye7JCV"
   ]
 }

@@ -260,6 +260,10 @@
                   display: flex;
                   margin-left: 0;
 
+                  .list-social__item:hover {
+                    transform: scale(1.07);
+                  }
+
                   .list-social__item .icon {
                     height: 4rem;
                     width: 4rem;

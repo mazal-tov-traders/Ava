@@ -1,0 +1,156 @@
+<div class="banner-content-image">
+  {{ section.settings.round_image | image_url: width: 800 | image_tag: class: 'round-image', loading: 'lazy' }}
+  <div class="banner-custom">
+    {% if section.settings.logo_background != blank %}
+      {{
+        section.settings.logo_background
+        | image_url: width: 945
+        | image_tag: class: 'logo-background', loading: 'lazy'
+      }}
+    {% endif %}
+    <div class="page-width">
+      {% if section.settings.round_image_mob != blank %}
+        {{
+          section.settings.round_image_mob
+          | image_url: width: 390
+          | image_tag: class: 'round-image-mob', loading: 'lazy'
+        }}
+      {% endif %}
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'text_logo_text' %}
+            {% if block.settings.logo_background_mob != blank %}
+              <div class="img-inner">
+                {{
+                  block.settings.logo_background_mob
+                  | image_url: width: 355
+                  | image_tag: class: 'logo-background-mob', loading: 'lazy'
+                }}
+              </div>
+            {% endif %}
+            <h2 class="text-logo-text">
+              {%- assign logo_alt = block.settings.logo.alt | default: shop.name | escape -%}
+              {% if block.settings.text != blank %}
+                {{ block.settings.text }}
+              {% endif %}
+              {% if block.settings.logo != blank %}
+                {{
+                  block.settings.logo
+                  | image_url: width: 232
+                  | image_tag: class: 'logo', loading: 'lazy', alt: logo_alt
+                }}
+              {% endif %}
+              {% if block.settings.text1 != blank %}
+                {{ block.settings.text1 }}
+              {% endif %}
+            </h2>
+          {% when 'content' %}
+            <div class="content">
+              {% if block.settings.content != blank %}
+                {{ block.settings.content }}
+              {% endif %}
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{%- style -%}
+  #shopify-section-{{ section.id }}{
+    @media screen and (min-width: 1050px) {
+      .banner-custom{
+        background-image: url({{ section.settings.image | image_url: width: 1920 }});
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+    @media screen and (max-width: 1049px) {
+      .page-width{
+        background-image: url({{ section.settings.image_mob | image_url: width: 1049 }});
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "Banner Content and Image",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mob",
+      "label": "background mobile image"
+    },
+    {
+      "type": "image_picker",
+      "id": "round_image",
+      "label": "Round image"
+    },
+    {
+      "type": "image_picker",
+      "id": "round_image_mob",
+      "label": "Round image mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_background",
+      "label": "logo background"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_logo_text",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "befor logo"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "logo"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo_background_mob",
+          "label": "logo background mobile"
+        },
+        {
+          "type": "text",
+          "id": "text1",
+          "label": "after logo"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "Content",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner Content and Image"
+    }
+  ]
+}
+{% endschema %}

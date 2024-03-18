@@ -52,6 +52,9 @@
       .list-social {
         display: flex;
         gap: 20px;
+        .list-social__item:hover {
+            transform: scale(1.07);
+        }
         @media screen and (max-width: 749px) {
           justify-content: center;
         }
@@ -69,8 +72,8 @@
       .footer__link-menu {
         margin-bottom: 15px;
         @media screen and (max-width: 749px) {
-            margin-bottom: 19px;
-          }
+          margin-bottom: 19px;
+        }
         .custom-link {
           font-family: "BG", sans-serif;
           font-size: 20px;
@@ -185,6 +188,7 @@
       display: flex;
       gap: 16px;
       align-items: flex-start;
+
       @media screen and (min-width: 1390px) {
         margin-left: -4px;
       }
@@ -199,6 +203,9 @@
         text-align: left;
         color: #fff;
         text-decoration: none;
+        &:hover img {
+          transform: scale(1.07);
+        }
 
         &:hover {
           text-decoration: underline;
@@ -315,8 +322,8 @@
   }
   .phone_wrapper.mobile_phone_wrapper {
     display: block;
-    img{
-        margin-top: 3px;
+    img {
+      margin-top: 3px;
     }
   }
   .phone_wrapper.desctop_phone_wrapper {

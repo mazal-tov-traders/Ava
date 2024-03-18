@@ -4,32 +4,38 @@
   margin: 0 auto;
   padding: 79px 0 80px;
   @media screen and (min-width: 500px) {
-    padding: 50px 0 100px;
+    padding: 56px 0 100px;
   }
   .page-width {
     max-width: 1200px;
     @media screen and (min-width: 1390px) {
       padding-left: 0px !important;
-      padding-right: 22px !important;
+      padding-right: 0px !important;
     }
     position: relative;
   }
   .heading {
     font-family: "Avenir";
     font-size: 44px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 60px;
     letter-spacing: 0em;
     text-align: center;
     margin-bottom: 10px;
+    @media screen and (min-width: 1390px) {
+      margin-left: 20px;
+    }
   }
   .icon-and-text__wrapper {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 51px;
+    margin-bottom: 55px;
     align-items: center;
-
+    margin-left: 23px;
+    @media screen and (max-width: 1200px) {
+      margin-left: 0px;
+    }
     @media screen and (max-width: 500px) {
       img {
         width: 88px;
@@ -63,6 +69,7 @@
           letter-spacing: 0em;
           text-align: left;
           margin-bottom: 10px;
+          margin-left: 0px;
         }
         .icon-and-text__wrapper {
           display: flex;

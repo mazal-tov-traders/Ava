@@ -39,6 +39,34 @@
         "show_text_below": false
       }
     },
+    "banner_content_and_image_4PaNai": {
+      "type": "banner-content-and-image",
+      "blocks": {
+        "content_kcAqDQ": {
+          "type": "content",
+          "settings": {
+            "content": "<p>Made with the finest organic ingredients on earth, Ava Organics are more than a snack – they’re a momentary escape to the tropics. Inspired by the harmony of nature, our Coconut Crispy Rollers are the perfect organic, craveable and guilt-free escape from your day.<\/p><p>Paired with your favorite coffee, crumbled over ice cream, or enjoyed on their own, you’re always a bite away from paradise with Ava Organics.<br\/><\/p>"
+          }
+        },
+        "text_logo_text_A3yqpb": {
+          "type": "text_logo_text",
+          "settings": {
+            "text": "the",
+            "logo": "shopify:\/\/shop_images\/Vector_Smart_Objectdds_1.png",
+            "text1": "way"
+          }
+        }
+      },
+      "block_order": [
+        "content_kcAqDQ",
+        "text_logo_text_A3yqpb"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Frame_1000001960_1.jpg",
+        "round_image": "shopify:\/\/shop_images\/Ellipse_14.jpg",
+        "logo-background": "shopify:\/\/shop_images\/Frame_1000001969.png"
+      }
+    },
     "custom_slider_product_Ye7JCV": {
       "type": "custom-slider-product",
       "blocks": {
@@ -48,18 +76,18 @@
             "image": "shopify:\/\/shop_images\/Rectangle_4133620.png",
             "border_color": "rgba(0,0,0,0)",
             "heading": "Love love love",
-            "color_heading_label": "#2E2A2C",
+            "color_heading_label": "#2e2a2c",
             "icon": "shopify:\/\/shop_images\/Frame_1212068_1.png",
             "text": "512 Reviews",
-            "color_text_label": "#2E2A2C",
+            "color_text_label": "#2e2a2c",
             "sub_title": "",
-            "color_sub_title_label": "#2E2A2C",
+            "color_sub_title_label": "#2e2a2c",
             "content": "This is my new favorite snack, so happy to finally see them back in stock. They are delicious, light and not loaded with sugar or calories. Love them ❤️",
-            "color_content_label": "#2E2A2C",
+            "color_content_label": "#2e2a2c",
             "author": "Catjjj",
-            "color_author_label": "#2E2A2C",
+            "color_author_label": "#2e2a2c",
             "date": "July 11, 2023",
-            "color_date_label": "#2E2A2C"
+            "color_date_label": "#2e2a2c"
           }
         },
         "product_xLqriL": {
@@ -68,18 +96,18 @@
             "image": "shopify:\/\/shop_images\/Rectangle_4133620_1.png",
             "border_color": "rgba(0,0,0,0)",
             "heading": "Unbelievably delicious!",
-            "color_heading_label": "#2E2A2C",
+            "color_heading_label": "#2e2a2c",
             "icon": "shopify:\/\/shop_images\/Frame_1212068_1.png",
             "text": "612 Reviews",
-            "color_text_label": "#2E2A2C",
+            "color_text_label": "#2e2a2c",
             "sub_title": "",
-            "color_sub_title_label": "#2E2A2C",
+            "color_sub_title_label": "#2e2a2c",
             "content": "Unbelievably delicious!Wow these are organic, and you can tell. No funky chemical\/artificial taste. Only 6 organic ingredients - clean, clean, clean. Not super sweet and the coconut is not cloying. The perfect blend of taste and texture. I bought two bags, and I am not ashamed to admit I will be buying a few more promptly. They are THAT good.",
-            "color_content_label": "#2E2A2C",
+            "color_content_label": "#2e2a2c",
             "author": "Lucy",
-            "color_author_label": "#2E2A2C",
+            "color_author_label": "#2e2a2c",
             "date": "July 11, 2023",
-            "color_date_label": "#2E2A2C"
+            "color_date_label": "#2e2a2c"
           }
         },
         "product_GVmQTU": {
@@ -88,18 +116,18 @@
             "image": "shopify:\/\/shop_images\/Rectangle_4133620_2.png",
             "border_color": "rgba(0,0,0,0)",
             "heading": "Great with ice cream",
-            "color_heading_label": "#2E2A2C",
+            "color_heading_label": "#2e2a2c",
             "icon": "shopify:\/\/shop_images\/Frame_1212068_1.png",
             "text": "1512 Reviews",
-            "color_text_label": "#2E2A2C",
+            "color_text_label": "#2e2a2c",
             "sub_title": "",
-            "color_sub_title_label": "#2E2A2C",
+            "color_sub_title_label": "#2e2a2c",
             "content": "These yummy treats are great with ice cream. I would love to see this company make this product as an ice cream cone.",
-            "color_content_label": "#2E2A2C",
+            "color_content_label": "#2e2a2c",
             "author": "Shyla",
-            "color_author_label": "#2E2A2C",
+            "color_author_label": "#2e2a2c",
             "date": "July 11, 2023",
-            "color_date_label": "#2E2A2C"
+            "color_date_label": "#2e2a2c"
           }
         }
       },
@@ -113,12 +141,13 @@
         "color_heading_label": "#682145",
         "icon": "shopify:\/\/shop_images\/Frame_1212068.png",
         "text": "80,000+ 5-Star Reviews",
-        "color_text_label": "#2E2A2C"
+        "color_text_label": "#2e2a2c"
       }
     }
   },
   "order": [
     "image_banner",
+    "banner_content_and_image_4PaNai",
     "custom_slider_product_Ye7JCV"
   ]
 }

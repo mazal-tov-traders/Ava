@@ -14,7 +14,11 @@
           {% if block.type == 'collection' %}
             <div class="collection__wraper__card">
               {% if block.settings.product_image != blank %}
-                {{ block.settings.product_image | image_url: width: 420 | image_tag: class: 'product__card__image-mob' loading:"laizy" }}
+                {{
+                  block.settings.product_image
+                  | image_url: width: 420
+                  | image_tag: class: 'product__card__image-mob', loading: 'laizy'
+                }}
               {% endif %}
               <div class="collection__wraper__card__content">
                 {% if block.settings.stars_image != blank %}
@@ -38,7 +42,7 @@
 </div>
 {% schema %}
 {
-  "name": "Custom collection Products",
+  "name": "Custom Collection",
   "tag": "section",
   "class": "section",
   "settings": [
@@ -93,7 +97,7 @@
   ],
   "presets": [
     {
-      "name": "Custom collection Products"
+      "name": "Custom Collection"
     }
   ]
 }

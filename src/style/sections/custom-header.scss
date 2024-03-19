@@ -1,7 +1,9 @@
 .header-wrapper {
   max-width: 1920px;
   margin: 0 auto;
-
+  .no-js-hidden{
+    display: none;
+  }
   &.gradient {
     background-color: rgba(0, 178, 227, 1);
   }

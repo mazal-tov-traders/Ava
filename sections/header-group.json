@@ -8,7 +8,7 @@
         "link_list_KttTY4": {
           "type": "link_list",
           "settings": {
-            "menu": "mobile-menu"
+            "menu": "drawer-menu"
           }
         }
       },
@@ -17,15 +17,15 @@
       ],
       "settings": {
         "logo_position": "middle-left",
-        "menu": "main-menu",
+        "menu": "custom-header",
         "menu_type_desktop": "dropdown",
         "tel": "1-800-977-8912",
         "sticky_header_type": "always",
-        "show_line_separator": true,
+        "show_line_separator": false,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
-        "enable_country_selector": true,
-        "enable_language_selector": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 26,

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@300;400;500;600;700&display=swap">
 
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
@@ -249,6 +250,30 @@
           font-size: 1.6rem;
         }
       }
+      @font-face {
+    font-family: 'Brandon Grotesque';
+    src: url('{{ 'BrandonGrotesque-Medium.eot' | asset_url }}');
+    src: local('Brandon Grotesque Medium'), local('BrandonGrotesque-Medium'),
+        url('{{ 'BrandonGrotesque-Medium.eot' | asset_url }}?#iefix') format('embedded-opentype'),
+        url('{{ 'BrandonGrotesque-Medium.woff2' | asset_url }}') format('woff2'),
+        url('{{ 'BrandonGrotesque-Medium.woff' | asset_url }}') format('woff'),
+        url('{{ 'BrandonGrotesque-Medium.ttf' | asset_url }}') format('truetype');
+    font-weight: 450;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('{{ 'AvenirNextCyr-Medium.eot' | asset_url }}');
+    src: local('Avenir Next Cyr Medium'), local('AvenirNextCyr-Medium'),
+        url('{{ 'AvenirNextCyr-Medium.eot' | asset_url }}?#iefix') format('embedded-opentype'),
+        url('{{ 'AvenirNextCyr-Medium.woff2' | asset_url }}') format('woff2'),
+        url('{{ 'AvenirNextCyr-Medium.woff' | asset_url }}') format('woff'),
+        url('{{ 'AvenirNextCyr-Medium.ttf' | asset_url }}') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}

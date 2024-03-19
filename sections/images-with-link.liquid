@@ -1,0 +1,59 @@
+<div class="images-links">
+  <div class="{% if section.settings.include_margins %}page-width{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    {% if section.settings.section_title != blank %}
+      <p class="images-links__title">{{ section.settings.section_title }}</p>
+    {% endif %}
+    <ul class="images-links__list">
+      {%- for block in section.blocks -%}
+        {% if block.type == "image_link" and block.settings.product_image_mob != blank %}
+          <li class="images-links__list__item">
+            <a href="{{ block.settings.link }}" class="images-links__list__item__link">
+              {{ block.settings.product_image_mob | image_url: width: 400 | image_tag: class: 'images-links__list__item__link__img' }}
+            </a>
+          </li>
+        {% endif %}
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Images with links",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "include_margins",
+        "default": true,
+        "label": "t:sections.apps.settings.include_margins.label"
+      }, {
+        "type": "inline_richtext",
+        "id": "section_title",
+        "label": "section title"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image_link",
+        "name": "image with link",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "product_image_mob",
+            "label": "image"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Images with links"
+      }
+    ]
+  }
+{% endschema %}

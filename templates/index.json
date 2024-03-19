@@ -1,46 +1,8 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "button"
-      ],
-      "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Featured products",
         "heading_size": "h2",
@@ -66,10 +28,84 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "custom_hero_banner_LABbWC": {
+      "type": "custom-hero-banner",
+      "blocks": {
+        "text_EPgpYJ": {
+          "type": "text",
+          "settings": {
+            "text": "Taste the harmony of",
+            "text_image": "shopify:\/\/shop_images\/nature_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "text_EPgpYJ"
+      ],
+      "settings": {
+        "include_margins": true,
+        "background": "shopify:\/\/shop_images\/Frame_1212250.jpg",
+        "background_mob": "shopify:\/\/shop_images\/Frame_1212250_8d0297a1-20f9-4f54-ba2d-a1caa0ba7de7.jpg",
+        "bottom_text": ""
+      }
+    },
+    "static_products_dBjiRc": {
+      "type": "static-products",
+      "blocks": {
+        "collection_9ApqrR": {
+          "type": "collection",
+          "settings": {
+            "product_image_mob": "shopify:\/\/shop_images\/123_2.jpg",
+            "product_image": "shopify:\/\/shop_images\/123_2.jpg",
+            "stars_image_mob": "shopify:\/\/shop_images\/Frame_1212068_2.png",
+            "stars_image": "shopify:\/\/shop_images\/Frame_1212068_2.png",
+            "stars_text": "512 Reviews",
+            "product_name": "ORIGINAL",
+            "product_description": "Coconut Crispy Rollers400g and 80g"
+          }
+        },
+        "collection_FA8Vqk": {
+          "type": "collection",
+          "settings": {
+            "product_image_mob": "shopify:\/\/shop_images\/1234.jpg",
+            "product_image": "shopify:\/\/shop_images\/1234.jpg",
+            "stars_image_mob": "shopify:\/\/shop_images\/Frame_1212068_2.png",
+            "stars_image": "shopify:\/\/shop_images\/Frame_1212068_2.png",
+            "stars_text": "512 Reviews",
+            "product_name": "CINNAMON",
+            "product_description": "Coconut Crispy Rollers400g and 80g"
+          }
+        }
+      },
+      "block_order": [
+        "collection_9ApqrR",
+        "collection_FA8Vqk"
+      ],
+      "settings": {
+        "include_margins": true,
+        "title": "<p>Discover the craveable and guilt-free world of <\/p><p><strong>Ava Organics.<\/strong><\/p>",
+        "background_image_1": "shopify:\/\/shop_images\/screen2.jpg",
+        "bottom_text": ""
+      }
+    },
+    "partners_dLzCUC": {
+      "type": "partners",
+      "settings": {
+        "include_margins": true,
+        "top_text": "Gluten-free, vegetarian and made with the world’s best organic coconuts.",
+        "background_image": "shopify:\/\/shop_images\/Ava_Recipe11_1.jpg",
+        "background_image_mob": "shopify:\/\/shop_images\/screen2_1.jpg",
+        "partners_image_desk": "shopify:\/\/shop_images\/Icons_1_1.png",
+        "partners_image_mob_1": "shopify:\/\/shop_images\/Icons_7_1.png",
+        "partners_image_mob_2": "shopify:\/\/shop_images\/Icons_8_1.png"
+      }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "custom_hero_banner_LABbWC",
+    "static_products_dBjiRc",
+    "partners_dLzCUC"
   ]
 }

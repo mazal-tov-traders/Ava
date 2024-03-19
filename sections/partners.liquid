@@ -1,75 +1,94 @@
 {% if section.settings.top_text != blank %}
   <p class="partners__top-text page-width">{{ section.settings.top_text }}</p>
 {% endif %}
-<div class="partners" style="background: url('{{ section.settings.background_image | image_url }}') center/cover no-repeat; max-width:1920px; width:100%;">
+<div
+  class="partners"
+  style="background: url('{{ section.settings.background_image | image_url }}') center/cover no-repeat; max-width:1920px; width:100%;"
+>
   <div class="page-width">
     <div class="partners__image-d">
       {% if section.settings.partners_image_desk != blank %}
-        {{ section.settings.partners_image_desk | image_url: width: 695 | image_tag: class: 'partners__image-d__image' }}
+        {{
+          section.settings.partners_image_desk
+          | image_url: width: 695
+          | image_tag: class: 'partners__image-d__image'
+        }}
       {% endif %}
     </div>
   </div>
 </div>
-<div class="partners-mob" style="background: url('{{ section.settings.background_image_mob | image_url }}') center/cover no-repeat; min-height:600px; max-width:390px;">
+<div
+  class="partners-mob"
+  style="background: url('{{ section.settings.background_image_mob | image_url }}') center/cover no-repeat; min-height:600px; max-width:390px;"
+>
   <div class="page-width">
     <div class="partners__wraper">
       {% if section.settings.partners_image_mob_1 != blank %}
-        {{ section.settings.partners_image_mob_1 | image_url: width: 250 | image_tag: class: 'partners__wraper__image-m first' }}
+        {{
+          section.settings.partners_image_mob_1
+          | image_url: width: 250
+          | image_tag: class: 'partners__wraper__image-m first'
+        }}
       {% endif %}
       {% if section.settings.partners_image_mob_2 != blank %}
-        {{ section.settings.partners_image_mob_2 | image_url: width: 304 | image_tag: class: 'partners__wraper__image-m' }}
+        {{
+          section.settings.partners_image_mob_2
+          | image_url: width: 304
+          | image_tag: class: 'partners__wraper__image-m'
+        }}
       {% endif %}
     </div>
   </div>
 </div>
 
 {% schema %}
+{
+  "name": "Partners",
+  "tag": "section",
+  "class": "section-partners",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "include_margins",
+      "default": true,
+      "label": "t:sections.apps.settings.include_margins.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "top_text",
+      "label": "bottom text"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mob",
+      "label": "background image mob"
+    },
+    {
+      "type": "image_picker",
+      "id": "partners_image_desk",
+      "label": "images desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "partners_image_mob_1",
+      "label": "images mob top"
+    },
+    {
+      "type": "image_picker",
+      "id": "partners_image_mob_2",
+      "label": "images mob bottom"
+    }
+  ],
 
-  {
-    "name": "partners",
-    "tag": "section",
-    "class": "section-partners",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "include_margins",
-        "default": true,
-        "label": "t:sections.apps.settings.include_margins.label"
-      },
-      {
-        "type": "inline_richtext",
-        "id": "top_text",
-        "label": "bottom text"
-      },
-      {
-        "type": "image_picker",
-        "id": "background_image",
-        "label": "background image"
-      },
-      {
-        "type": "image_picker",
-        "id": "background_image_mob",
-        "label": "background image mob"
-      }, {
-        "type": "image_picker",
-        "id": "partners_image_desk",
-        "label": "images desktop"
-      }, {
-        "type": "image_picker",
-        "id": "partners_image_mob_1",
-        "label": "images mob top"
-      }, {
-        "type": "image_picker",
-        "id": "partners_image_mob_2",
-        "label": "images mob bottom"
-      }
-
-    ],
-
-    "presets": [
-      {
-        "name": "partners"
-      }
-    ]
-  }
+  "presets": [
+    {
+      "name": "partners"
+    }
+  ]
+}
 {% endschema %}

@@ -283,30 +283,6 @@
     <script src="{{ 'navigation-anchor.js' | asset_url }}" defer="defer"></script>
     <style>
       @font-face {
-        font-family: 'BG';
-        font-style: normal;
-        font-weight: 450;
-        src: url('{{ "brandon-grotesque-regular.ttf" | asset_url }}') format('truetype');
-      }
-      @font-face {
-        font-family: 'Avenir';
-        font-style: normal;
-        font-weight: 600;
-        src: url('{{ "AvenirNextCyr-Bold.ttf" | asset_url }}') format('truetype');
-      }
-      @font-face {
-        font-family: 'Avenir';
-        font-style: normal;
-        font-weight: 500;
-        src: url('{{ "AvenirNextCyr-Demi.ttf" | asset_url }}') format('truetype');
-      }
-      @font-face {
-        font-family: 'Avenir';
-        font-style: normal;
-        font-weight: 400;
-        src: url('{{ "AvenirNextCyr-Medium.ttf" | asset_url }}') format('truetype');
-      }
-      @font-face {
         font-family: 'Brandon Grotesque';
         src: url('{{ 'BrandonGrotesque-Medium.eot' | asset_url }}');
         src: local('Brandon Grotesque Medium'), local('BrandonGrotesque-Medium'),
@@ -318,15 +294,27 @@
         font-style: normal;
       }
       @font-face {
-          font-family: 'Avenir Next';
-          src: url('{{ 'AvenirNextCyr-Medium.eot' | asset_url }}');
-          src: local('Avenir Next Cyr Medium'), local('AvenirNextCyr-Medium'),
-              url('{{ 'AvenirNextCyr-Medium.eot' | asset_url }}?#iefix') format('embedded-opentype'),
-              url('{{ 'AvenirNextCyr-Medium.woff2' | asset_url }}') format('woff2'),
-              url('{{ 'AvenirNextCyr-Medium.woff' | asset_url }}') format('woff'),
-              url('{{ 'AvenirNextCyr-Medium.ttf' | asset_url }}') format('truetype');
-          font-weight: 500;
-          font-style: normal;
+        font-family: 'Avenir';
+        font-style: normal;
+        font-weight: 600;
+        src: url('{{ "AvenirNextCyr-Bold.ttf" | asset_url }}') format('truetype');
+      }
+      @font-face {
+        font-family: 'Avenir Next';
+        src: url('{{ 'AvenirNextCyr-Medium.eot' | asset_url }}');
+        src: local('Avenir Next Cyr Medium'), local('AvenirNextCyr-Medium'),
+            url('{{ 'AvenirNextCyr-Medium.eot' | asset_url }}?#iefix') format('embedded-opentype'),
+            url('{{ 'AvenirNextCyr-Medium.woff2' | asset_url }}') format('woff2'),
+            url('{{ 'AvenirNextCyr-Medium.woff' | asset_url }}') format('woff'),
+            url('{{ 'AvenirNextCyr-Medium.ttf' | asset_url }}') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'Avenir';
+        font-style: normal;
+        font-weight: 400;
+        src: url('{{ "AvenirNextCyr-Medium.ttf" | asset_url }}') format('truetype');
       }
     </style>
     {{ 'main.css' | asset_url | stylesheet_tag }}

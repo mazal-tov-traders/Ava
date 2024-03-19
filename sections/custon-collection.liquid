@@ -1,4 +1,7 @@
-<div style="background: url('{{ section.settings.background_image_1 | image_url }}') center/cover no-repeat; max-width:1920px" class="collection {% if section.settings.include_margins %}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+<div
+  style="background: url('{{ section.settings.background_image_1 | image_url }}') center/cover no-repeat; max-width:1920px"
+  class="collection {% if section.settings.include_margins %}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+>
   <div class="page-width">
     <div class="collection__wraper">
       <div class="collection__wraper__title">
@@ -15,7 +18,11 @@
               {% endif %}
               <div class="collection__wraper__card__content">
                 {% if block.settings.stars_image != blank %}
-                  {{ block.settings.stars_image | image_url: width: 88 | image_tag: class: 'collection__wraper__card__content__image', loading:"laizy" }}
+                  {{
+                    block.settings.stars_image
+                    | image_url: width: 88
+                    | image_tag: class: 'collection__wraper__card__content__image', loading: 'laizy'
+                  }}
                 {% endif %}
                 <p class="collection__wraper__card__content__rev">{{- block.settings.stars_text -}}</p>
               </div>
@@ -30,59 +37,64 @@
   </div>
 </div>
 {% schema %}
-  {
-    "name": "Custom collection",
-    "tag": "section",
-    "class": "section",
-    "settings": [
-     {
-        "type": "richtext",
-        "id": "title",
-        "label": "section title"
-      }, {
-        "type": "image_picker",
-        "id": "background_image_1",
-        "label": "image"
-      }, {
-        "type": "inline_richtext",
-        "id": "bottom_text",
-        "label": "bottom text"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "collection",
-        "name": "custom-collection-item",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "product_image",
-            "label": "Product image"
-          },
-          {
-            "type": "image_picker",
-            "id": "stars_image",
-            "label": "stars image"
-          }, {
-            "type": "inline_richtext",
-            "id": "stars_text",
-            "label": "reviews text"
-          }, {
-            "type": "inline_richtext",
-            "id": "product_name",
-            "label": "product name"
-          }, {
-            "type": "inline_richtext",
-            "id": "product_description",
-            "label": "product description"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Custom collection"
-      }
-    ]
-  }
+{
+  "name": "Custom collection Products",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "section title"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_1",
+      "label": "image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "bottom_text",
+      "label": "bottom text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "custom-collection-item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Product image"
+        },
+        {
+          "type": "image_picker",
+          "id": "stars_image",
+          "label": "stars image"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "stars_text",
+          "label": "reviews text"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "product_name",
+          "label": "product name"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "product_description",
+          "label": "product description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom collection Products"
+    }
+  ]
+}
 {% endschema %}

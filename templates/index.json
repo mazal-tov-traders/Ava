@@ -1,9 +1,38 @@
 {
   "sections": {
-    "custom_hero_banner_PyHzV8": {
-      "type": "custom-hero-banner",
+    "featured_collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "banner_with_text_N7JqGi": {
+      "type": "banner-with-text",
       "blocks": {
-        "text_j9n6mx": {
+        "text_bFCGYy": {
           "type": "text",
           "settings": {
             "text": "Taste the harmony of",
@@ -12,225 +41,16 @@
         }
       },
       "block_order": [
-        "text_j9n6mx"
+        "text_bFCGYy"
       ],
       "settings": {
-        "include_margins": true,
         "background": "shopify:\/\/shop_images\/Frame_1212250.jpg",
-        "background_mob": "shopify:\/\/shop_images\/Frame_1212250_1.jpg",
-        "bottom_text": ""
-      }
-    },
-    "static_products_dM3EcP": {
-      "type": "static-products",
-      "blocks": {
-        "collection_hxC4gk": {
-          "type": "collection",
-          "settings": {
-            "product_image_mob": "shopify:\/\/shop_images\/Frame_1000001958.png",
-            "product_image": "shopify:\/\/shop_images\/Frame_1000001958.png",
-            "stars_image_mob": "shopify:\/\/shop_images\/Frame_1212068_1.png",
-            "stars_image": "shopify:\/\/shop_images\/Frame_1212068_1.png",
-            "stars_text": "512 Reviews",
-            "product_name": "ORIGINAL",
-            "product_description": "Coconut Crispy Rollers400g and 80g"
-          }
-        },
-        "collection_cB38xx": {
-          "type": "collection",
-          "settings": {
-            "product_image_mob": "shopify:\/\/shop_images\/Frame_1000001958_1.png",
-            "product_image": "shopify:\/\/shop_images\/Frame_1000001958_1.png",
-            "stars_image_mob": "shopify:\/\/shop_images\/Frame_1212068_1.png",
-            "stars_image": "shopify:\/\/shop_images\/Frame_1212068_1.png",
-            "stars_text": "512 Reviews",
-            "product_name": "CINNAMON",
-            "product_description": "Coconut Crispy Rollers400g and 80g"
-          }
-        }
-      },
-      "block_order": [
-        "collection_hxC4gk",
-        "collection_cB38xx"
-      ],
-      "settings": {
-        "include_margins": true,
-        "title": "<p>Discover the craveable and guilt-free world of <strong>Ava Organics.<\/strong><\/p>",
-        "background_image_1": "shopify:\/\/shop_images\/Frame_1000001960_1.jpg",
-        "bottom_text": "Gluten-free, vegetarian and made with the world’s best organic coconuts."
-      }
-    },
-    "partners_y9Tz9w": {
-      "type": "partners",
-      "settings": {
-        "include_margins": true,
-        "top_text": "",
-        "background_image": "shopify:\/\/shop_images\/Ava_Recipe11_1.jpg",
-        "partners_image_desk": "shopify:\/\/shop_images\/Icons_1.png"
-      }
-    },
-    "images_with_link_qmMBAW": {
-      "type": "images-with-link",
-      "blocks": {
-        "image_link_9cXLzF": {
-          "type": "image_link",
-          "settings": {
-            "product_description": "",
-            "product_image_mob": "shopify:\/\/shop_images\/image_10.png",
-            "link": ""
-          }
-        },
-        "image_link_zRD6Ca": {
-          "type": "image_link",
-          "settings": {
-            "product_description": "",
-            "product_image_mob": "shopify:\/\/shop_images\/image_9.png",
-            "link": ""
-          }
-        },
-        "image_link_xEcXrD": {
-          "type": "image_link",
-          "settings": {
-            "product_description": "",
-            "product_image_mob": "shopify:\/\/shop_images\/image_9_1.png",
-            "link": ""
-          }
-        },
-        "image_link_rgJbGX": {
-          "type": "image_link",
-          "settings": {
-            "product_description": "",
-            "product_image_mob": "shopify:\/\/shop_images\/image_9_2.png",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_link_9cXLzF",
-        "image_link_zRD6Ca",
-        "image_link_xEcXrD",
-        "image_link_rgJbGX"
-      ],
-      "settings": {
-        "include_margins": true,
-        "section_title": "Find Your Tropical Bliss"
-      }
-    },
-    "banner_content_and_image_4PaNai": {
-      "type": "banner-content-and-image",
-      "blocks": {
-        "text_logo_text_A3yqpb": {
-          "type": "text_logo_text",
-          "settings": {
-            "text": "the",
-            "logo": "shopify:\/\/shop_images\/Vector_Smart_Objectdds_1.png",
-            "logo_background_mob": "shopify:\/\/shop_images\/Frame_1000001969.png",
-            "text1": "way"
-          }
-        },
-        "content_kcAqDQ": {
-          "type": "content",
-          "settings": {
-            "content": "<p>Made with the finest organic ingredients on earth, Ava Organics are more than a snack – they’re a momentary escape to the tropics. Inspired by the harmony of nature, our Coconut Crispy Rollers are the perfect organic, craveable and guilt-free escape from your day.<\/p><p>Paired with your favorite coffee, crumbled over ice cream, or enjoyed on their own, you’re always a bite away from paradise with Ava Organics.<br\/><\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "text_logo_text_A3yqpb",
-        "content_kcAqDQ"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Frame_1000001960_1.jpg",
-        "image_mob": "shopify:\/\/shop_images\/Frame_1000001960_1.jpg",
-        "round_image": "shopify:\/\/shop_images\/Ellipse_14.jpg",
-        "round_image_mob": "shopify:\/\/shop_images\/Ellipse_14.jpg",
-        "logo_background": "shopify:\/\/shop_images\/Frame_1000001969.png"
-      }
-    },
-    "custom_slider_product_Ye7JCV": {
-      "type": "custom-slider-product",
-      "blocks": {
-        "product_bxYkcW": {
-          "type": "product",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_4133620.png",
-            "border_color": "rgba(0,0,0,0)",
-            "heading": "Love love love",
-            "color_heading_label": "#2e2a2c",
-            "icon": "shopify:\/\/shop_images\/Frame_1212068_1.png",
-            "text": "512 Reviews",
-            "color_text_label": "#2e2a2c",
-            "sub_title": "",
-            "color_sub_title_label": "#2e2a2c",
-            "content": "This is my new favorite snack, so happy to finally see them back in stock. They are delicious, light and not loaded with sugar or calories. Love them ❤️",
-            "color_content_label": "#2e2a2c",
-            "author": "Catjjj",
-            "color_author_label": "#2e2a2c",
-            "date": "July 11, 2023",
-            "color_date_label": "#2e2a2c"
-          }
-        },
-        "product_xLqriL": {
-          "type": "product",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_4133620_1.png",
-            "border_color": "rgba(0,0,0,0)",
-            "heading": "Unbelievably delicious!",
-            "color_heading_label": "#2e2a2c",
-            "icon": "shopify:\/\/shop_images\/Frame_1212068_1.png",
-            "text": "612 Reviews",
-            "color_text_label": "#2e2a2c",
-            "sub_title": "",
-            "color_sub_title_label": "#2e2a2c",
-            "content": "Unbelievably delicious!Wow these are organic, and you can tell. No funky chemical\/artificial taste. Only 6 organic ingredients - clean, clean, clean. Not super sweet and the coconut is not cloying. The perfect blend of taste and texture. I bought two bags, and I am not ashamed to admit I will be buying a few more promptly. They are THAT good.",
-            "color_content_label": "#2e2a2c",
-            "author": "Lucy",
-            "color_author_label": "#2e2a2c",
-            "date": "July 11, 2023",
-            "color_date_label": "#2e2a2c"
-          }
-        },
-        "product_GVmQTU": {
-          "type": "product",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_4133620_2.png",
-            "border_color": "rgba(0,0,0,0)",
-            "heading": "Great with ice cream",
-            "color_heading_label": "#2e2a2c",
-            "icon": "shopify:\/\/shop_images\/Frame_1212068_1.png",
-            "text": "1512 Reviews",
-            "color_text_label": "#2e2a2c",
-            "sub_title": "",
-            "color_sub_title_label": "#2e2a2c",
-            "content": "These yummy treats are great with ice cream. I would love to see this company make this product as an ice cream cone.",
-            "color_content_label": "#2e2a2c",
-            "author": "Shyla",
-            "color_author_label": "#2e2a2c",
-            "date": "July 11, 2023",
-            "color_date_label": "#2e2a2c"
-          }
-        }
-      },
-      "block_order": [
-        "product_bxYkcW",
-        "product_xLqriL",
-        "product_GVmQTU"
-      ],
-      "settings": {
-        "heading": "See what our friends are saying!",
-        "color_heading_label": "#682145",
-        "icon": "shopify:\/\/shop_images\/Frame_1212068.png",
-        "text": "80,000+ 5-Star Reviews",
-        "color_text_label": "#2e2a2c"
+        "background_mob": "shopify:\/\/shop_images\/Frame_1212250_9.jpg"
       }
     }
   },
   "order": [
-    "custom_hero_banner_PyHzV8",
-    "static_products_dM3EcP",
-    "partners_y9Tz9w",
-    "images_with_link_qmMBAW",
-    "banner_content_and_image_4PaNai",
-    "custom_slider_product_Ye7JCV"
+    "featured_collection",
+    "banner_with_text_N7JqGi"
   ]
 }

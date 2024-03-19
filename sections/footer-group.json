@@ -8,20 +8,20 @@
         "image_bxVwXB": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Vector_Smart_Object1_1_1.png",
-            "image_mob": "shopify:\/\/shop_images\/Wowza_Logo.png"
+            "image": "shopify:\/\/shop_images\/Vector_Smart_Object1_1_2.png",
+            "image_mob": "shopify:\/\/shop_images\/Wowza_Logo_1.png"
           }
         },
         "link_list_iNVW69": {
           "type": "link_list",
           "settings": {
-            "menu": "main-menu"
+            "menu": "custom-header"
           }
         },
         "link_list_7cBPJx": {
           "type": "link_list",
           "settings": {
-            "menu": "footer-main"
+            "menu": "custom-footer"
           }
         },
         "phone_67mzLq": {
@@ -40,14 +40,15 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/Rectangle_4133617.jpg",
-        "image_mob": "shopify:\/\/shop_images\/Rectangle_4133617_1.jpg",
+        "image_mob": "shopify:\/\/shop_images\/Rectangle_4133617_2.jpg",
         "newsletter_enable": true,
         "newsletter_heading": "Get Your Ava On",
         "content": "Sign up for emails to hear about promotions, new flavors and more! And when you do, you'll earn 15% off of your first order.",
         "link_terms_and_conditions": "",
         "link_police": "",
         "link_accessibility": "",
-        "link_terms_use": ""
+        "link_terms_use": "",
+        "ad_choices": ""
       }
     },
     "footer": {

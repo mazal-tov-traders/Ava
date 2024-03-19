@@ -22,7 +22,7 @@
 
     .wrapper-logo {
       display: flex;
-      gap: 86px;
+      gap: 95px;
       flex-direction: column;
       @media screen and (min-width: 1390px) {
         margin-right: 105px;
@@ -63,7 +63,7 @@
 
     .custom-footer-menu {
       @media screen and (min-width: 1390px) {
-        margin-right: 52px;
+        margin-right: 50px;
       }
       @media screen and (max-width: 749px) {
         width: 100%;
@@ -77,7 +77,7 @@
         .custom-link {
           font-family: 'Brandon Grotesque', sans-serif;
           font-size: 20px;
-          font-weight: 600;
+          font-weight: 450;
           line-height: 29px;
           letter-spacing: 0em;
           text-align: left;
@@ -102,7 +102,7 @@
       .heading {
         font-family: 'Brandon Grotesque';
         font-size: 20px;
-        font-weight: 600;
+        font-weight: 450;
         line-height: 29px;
         letter-spacing: 0em;
         text-align: left;
@@ -188,6 +188,10 @@
       display: flex;
       gap: 16px;
       align-items: flex-start;
+      height: fit-content;
+      &:hover img {
+        transform: scale(1.07);
+      }
 
       @media screen and (min-width: 1390px) {
         margin-left: -4px;
@@ -203,10 +207,7 @@
         text-align: left;
         color: #fff;
         text-decoration: none;
-        &:hover img {
-          transform: scale(1.07);
-        }
-
+        
         &:hover {
           text-decoration: underline;
           text-underline-offset: 0.3rem;

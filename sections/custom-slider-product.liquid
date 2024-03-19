@@ -5,7 +5,7 @@
     {% endif %}
     <div class="icon-and-text__wrapper">
       {% if section.settings.icon != blank %}
-        {{ section.settings.icon | image_url: width: 108 | image_tag: class: 'icon-stars' }}
+        {{ section.settings.icon | image_url: width: 108 | image_tag: class: 'icon-stars', loading: 'lazy' }}
       {% endif %}
       {% if section.settings.text != blank %}
         <h3 class="text" style="color:{{ section.settings.color_text_label }}">
@@ -21,7 +21,11 @@
               <div class="swiper-slide">
                 {% if block.settings.image != blank %}
                   <div class="border-for-img border-for-img-{{ forloop.index }}">
-                    {{ block.settings.image | image_url: width: 140 | image_tag: class: 'image-product' }}
+                    {{
+                      block.settings.image
+                      | image_url: width: 140
+                      | image_tag: class: 'image-product', loading: 'lazy'
+                    }}
                   </div>
                 {% endif %}
                 {% if block.settings.heading != blank %}
@@ -31,7 +35,7 @@
                 {% endif %}
                 <div class="icon-and-text__wrapper">
                   {% if block.settings.icon != blank %}
-                    {{ block.settings.icon | image_url: width: 108 | image_tag: class: 'icon-stars' }}
+                    {{ block.settings.icon | image_url: width: 108 | image_tag: class: 'icon-stars', loading: 'lazy }}
                   {% endif %}
                   {% if block.settings.text != blank %}
                     <h3 class="text" style="color:{{ block.settings.color_text_label }}">
@@ -79,20 +83,6 @@
     </div>
   </div>
 </div>
-{%- style -%}
-  #shopify-section-{{ section.id }}{
-    .slider-product{
-      background-image: url({{ section.settings.image | image_url: width: 3840 }});
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-    }
-  }
-  .swiper {
-    width: 100%;
-    height: 100%;
-  }
-{%- endstyle -%}
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <link
   rel="stylesheet"
@@ -137,11 +127,6 @@
   "tag": "section",
   "class": "section",
   "settings": [
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "background image"
-    },
     {
       "type": "inline_richtext",
       "id": "heading",

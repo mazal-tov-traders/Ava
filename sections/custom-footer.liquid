@@ -7,17 +7,21 @@
             {%- when 'image' -%}
               <div class="footer__img-logo">
                 {% if block.settings.image != blank %}
-                  {{ block.settings.image | image_url: width: 115 | image_tag: class: 'image' }}
+                  {{ block.settings.image | image_url: width: 115 | image_tag: class: 'image', loading: 'lazy' }}
                 {% endif %}
                 {% if block.settings.image_mob != blank %}
-                  {{ block.settings.image_mob | image_url: width: 150 | image_tag: class: 'image-mob' }}
+                  {{
+                    block.settings.image_mob
+                    | image_url: width: 150
+                    | image_tag: class: 'image-mob', loading: 'lazy'
+                  }}
                 {% endif %}
               </div>
             {%- when 'phone' -%}
               {%- if block.settings.phone_number != blank -%}
                 <div class="phone_wrapper mobile_phone_wrapper">
                   {% if block.settings.icon != blank %}
-                    {{ block.settings.icon | image_url: width: 24 | image_tag: class: 'icon' }}
+                    {{ block.settings.icon | image_url: width: 24 | image_tag: class: 'icon', loading: 'lazy' }}
                   {% endif %}
                   {% if block.settings.phone_number != blank %}
                     <a href="tel:{{ block.settings.phone_number }}" class="phone__number">
@@ -28,7 +32,6 @@
               {% endif %}
           {%- endcase -%}
         {%- endfor -%}
-        {% comment %}  {% endcomment %}
         <ul class="list list-social list-unstyled" role="list">
           {%- if settings.social_facebook_link != blank -%}
             <li class="list-social__item">
@@ -47,7 +50,6 @@
             </li>
           {%- endif -%}
         </ul>
-        {% comment %}  {% endcomment %}
       </div>
       {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -159,7 +161,7 @@
             {%- if block.settings.phone_number != blank -%}
               <div class="phone_wrapper desctop_phone_wrapper">
                 {% if block.settings.icon != blank %}
-                  {{ block.settings.icon | image_url: width: 24 | image_tag: class: 'icon' }}
+                  {{ block.settings.icon | image_url: width: 24 | image_tag: class: 'icon', loading: 'lazy' }}
                 {% endif %}
                 {% if block.settings.phone_number != blank %}
                   <a href="tel:{{ block.settings.phone_number }}" class="phone__number">
@@ -219,10 +221,10 @@
           >
           |
           <a
-            {% if section.settings.link_terms_use == blank %}
+            {% if section.settings.ad_choices == blank %}
               role="link" aria-disabled="true"
             {% else %}
-              href="{{ section.settings.link_terms_use }}"
+              href="{{ section.settings.ad_choices }}"
             {% endif %}
             class="p-link"
             >Ad Choices</a
@@ -359,6 +361,11 @@
       "type": "url",
       "id": "link_terms_use",
       "label": "Terms of Use Page"
+    },
+    {
+      "type": "url",
+      "id": "ad_choices",
+      "label": "Ad Choices Page"
     }
   ],
   "presets": [

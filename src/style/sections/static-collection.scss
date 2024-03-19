@@ -1,14 +1,28 @@
 .collection {
+  padding-bottom: 82px;
+  &__bottom-text {
+    margin-top: 0;
+    color: var(--3, #682145);
+    text-align: center;
+    font-family: "Avenir Next";
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 35.52px;
+    letter-spacing: 0;
+    @media screen and (min-width: 580px) {
+      font-size: 30px;
+      line-height: normal;
+    }
+  }
   padding-top: 80px;
   padding-bottom: 50px;
-  @media screen and (min-width:580px) {
-  
-  padding-bottom: 50px;
+  @media screen and (min-width: 580px) {
+    padding-bottom: 50px;
   }
   margin-left: auto;
   margin-right: auto;
   &__wraper {
-    
     margin: 0 auto;
     &__text {
       color: var(--3, #682145);
@@ -52,6 +66,7 @@
           max-width: 234px;
           margin-left: auto;
           margin-right: auto;
+          letter-spacing: 0;
         }
         &__description {
           color: var(--4, #2e2a2c);
@@ -87,10 +102,10 @@
       line-height: normal;
       letter-spacing: 0;
       line-height: 42.9px;
-          @media (min-width: 580px) {
-            font-size: 44px;
-            line-height: 62.92px;
-        }
+      @media (min-width: 580px) {
+        font-size: 44px;
+        line-height: 62.92px;
+      }
     }
     &__title p strong {
       text-transform: uppercase;
@@ -101,9 +116,24 @@
     display: flex;
     justify-content: center;
     gap: 50px;
-    @media  screen and (min-width:480px) {
+    margin-bottom: 50px;
+    @media screen and (min-width: 480px) {
       gap: 30px;
     }
-   
+  }
+  @media (max-width: 580px) {
+    .product__card__image-mob {
+      width: 320px !important;
+      height: auto !important;
+    }
+  }
+  @media (min-width: 1500px) {
+    .product__card__image-mob {
+      height: 400px !important;
+    }
+  }
+  .product__card__image-mob {
+    display: block;
+    margin-bottom: 20px;
   }
 }

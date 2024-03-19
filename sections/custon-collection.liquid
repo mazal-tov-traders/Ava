@@ -1,37 +1,21 @@
-<style>
-    @media (max-width: 580px) {
-      .product__card__image-mob {
-         width: 320px !important;
-        height: auto !important;
-      }
-    }
-    @media (min-width: 1200px) {
-      .product__card__image-mob {
-        height: 400px !important ;
-      }
-    }
-    .product__card__image-mob {
-          
-          display: block;
-          margin-bottom: 20px;
-      }
-</style>
 <div style="background: url('{{ section.settings.background_image_1 | image_url }}') center/cover no-repeat; max-width:1920px" class="collection {% if section.settings.include_margins %}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
   <div class="page-width">
     <div class="collection__wraper">
       <div class="collection__wraper__title">
-        {{- section.settings.title-}}
+        {% if section.settings.title != blank %}
+          {{- section.settings.title -}}
+        {% endif %}
       </div>
       <div class="grid">
         {%- for block in section.blocks -%}
           {% if block.type == 'collection' %}
             <div class="collection__wraper__card">
-              {% if block.settings.product_image_mob != blank and block.settings.product_image_mob != blank %}
-                {{ block.settings.product_image | image_url: width: 420 | image_tag: class: 'product__card__image-mob' }}
+              {% if block.settings.product_image != blank %}
+                {{ block.settings.product_image | image_url: width: 420 | image_tag: class: 'product__card__image-mob' loading:"laizy" }}
               {% endif %}
               <div class="collection__wraper__card__content">
-                {% if block.settings.stars_image != blank and block.settings.stars_image != blank %}
-                  {{ block.settings.stars_image | image_url: width: 88 | image_tag: class: 'collection__wraper__card__content__image' }}
+                {% if block.settings.stars_image != blank %}
+                  {{ block.settings.stars_image | image_url: width: 88 | image_tag: class: 'collection__wraper__card__content__image', loading:"laizy" }}
                 {% endif %}
                 <p class="collection__wraper__card__content__rev">{{- block.settings.stars_text -}}</p>
               </div>
@@ -42,21 +26,16 @@
         {%- endfor -%}
       </div>
     </div>
+    <p class="collection__bottom-text">{{ section.settings.bottom_text }}</p>
   </div>
 </div>
-
 {% schema %}
   {
-    "name": "custom collection",
+    "name": "Custom collection",
     "tag": "section",
     "class": "section",
     "settings": [
-      {
-        "type": "checkbox",
-        "id": "include_margins",
-        "default": true,
-        "label": "t:sections.apps.settings.include_margins.label"
-      }, {
+     {
         "type": "richtext",
         "id": "title",
         "label": "section title"
@@ -77,18 +56,8 @@
         "settings": [
           {
             "type": "image_picker",
-            "id": "product_image_mob",
-            "label": "Product image"
-          },
-          {
-            "type": "image_picker",
             "id": "product_image",
             "label": "Product image"
-          },
-          {
-            "type": "image_picker",
-            "id": "stars_image_mob",
-            "label": "stars image"
           },
           {
             "type": "image_picker",
@@ -112,7 +81,7 @@
     ],
     "presets": [
       {
-        "name": "custom collection"
+        "name": "Custom collection"
       }
     ]
   }

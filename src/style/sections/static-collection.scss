@@ -1,0 +1,109 @@
+.collection {
+  padding-top: 80px;
+  padding-bottom: 50px;
+  @media screen and (min-width:580px) {
+  
+  padding-bottom: 50px;
+  }
+  margin-left: auto;
+  margin-right: auto;
+  &__wraper {
+    
+    margin: 0 auto;
+    &__text {
+      color: var(--3, #682145);
+      text-align: center;
+      font-family: "Avenir Next";
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+    &__card {
+      &__image {
+        display: block;
+        margin-bottom: 20px;
+      }
+      &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-bottom: 10px;
+        &__rev {
+          color: rgba(46, 42, 44, 0.5);
+          font-family: "Avenir Next";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          margin: 0;
+        }
+        &__name {
+          color: var(--4, #2e2a2c);
+          text-align: center;
+          font-family: Poppins;
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          margin-top: 0;
+          margin-bottom: 5px;
+          max-width: 234px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        &__description {
+          color: var(--4, #2e2a2c);
+          text-align: center;
+          font-family: Poppins;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          max-width: 234px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 0px;
+          margin-bottom: 0px;
+          letter-spacing: 0;
+        }
+      }
+    }
+    &__title {
+      margin-bottom: 50px;
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &__title > p {
+      margin: 0;
+      color: var(--3, #682145);
+      text-align: center;
+      font-family: "Avenir Next";
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0;
+      line-height: 42.9px;
+          @media (min-width: 580px) {
+            font-size: 44px;
+            line-height: 62.92px;
+        }
+    }
+    &__title p strong {
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+  }
+  .grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    @media  screen and (min-width:480px) {
+      gap: 30px;
+    }
+   
+  }
+}

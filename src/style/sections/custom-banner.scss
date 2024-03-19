@@ -1,0 +1,58 @@
+.banner-with-text {
+    max-width: 100%;
+    margin: 0 auto;
+   
+    &__wraper  {
+        
+        max-width: 390px;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+        @media (min-width: 481px) {
+            padding-top: 170px;
+            padding-bottom: 170px;
+        } 
+
+        @media (min-width: 1240px) {
+            max-width: 612px;
+          
+            align-items: center;
+            margin-top: 0;
+        } 
+        @media (min-width: 1920px) {
+            margin-right: -50px;
+        }
+        &__text {
+            margin: 0px;
+            margin-bottom: 10px;
+            color: var(--2, #FFF);
+            text-align: center;
+            font-family: "Brandon Grotesque";
+            font-size: 44px;
+            font-style: normal;
+            font-weight: 450;
+            line-height: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            @media (min-width: 1240px) {
+                line-height: 80px; 
+                font-size: 70px;
+            } 
+        }
+        &__image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 254px;
+            height: auto !important;
+            @media (min-width: 1240px) {
+                min-width:400px;
+            } 
+          
+         
+        }
+    }
+
+}

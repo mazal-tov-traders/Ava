@@ -1,0 +1,58 @@
+.images-links {
+  padding-bottom: 60px;
+  padding-top: 80px;
+  @media screen and (min-width: 391px) {
+    padding-top: 85px;
+  }
+  &__title {
+    color: var(--3, #682145);
+    text-align: center;
+    font-family: "Avenir Next";
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    letter-spacing: 0;
+    line-height: 60.1px;
+    @media screen and (min-width: 391px) {
+      margin-bottom: 55px;
+    }
+  }
+  &__list {
+    list-style: none;
+    padding-left: 0px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    &__item {
+      width: 580px;
+      height: 180px;
+      border-radius: 100px;
+      border: 1px solid var(--1, #00b2e3);
+      background: #f1fafb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @media screen and (max-width: 723px) {
+        width: 100%;
+        height: 140px;
+      }
+      @media screen and (max-width: 480px) {
+        width: 320px;
+        height: 100px;
+      }
+      &__link {
+        display: flex;
+        justify-content: center;
+        &__img {
+          @media screen and (max-width: 700px) {
+            max-width: 248px;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

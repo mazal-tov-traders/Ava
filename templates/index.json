@@ -71,28 +71,28 @@
           "type": "image_link",
           "settings": {
             "product_image_mob": "shopify:\/\/shop_images\/image_9_3.png",
-            "link": "shopify:\/\/collections"
+            "link": "https:\/\/www.walmart.com\/ip\/Ava-Organics-Original-Coconut-Crispy-Roller-2-8-oz\/3435176300?from=\/search"
           }
         },
         "image_link_QkeMJN": {
           "type": "image_link",
           "settings": {
             "product_image_mob": "shopify:\/\/shop_images\/image_9_4.png",
-            "link": ""
+            "link": "https:\/\/www.samsclub.com\/p\/ava-organic-coconut-crispy-rollers-14-1-oz\/prod25140458?xid=plp_product_1"
           }
         },
         "image_link_gh89rt": {
           "type": "image_link",
           "settings": {
             "product_image_mob": "shopify:\/\/shop_images\/image_9_5.png",
-            "link": ""
+            "link": "https:\/\/www.amazon.com\/stores\/AvaOrganics\/page\/228A1FC9-7AD7-4EE3-B3C2-0EB65E1B92A8?ref_=ast_bln&store_ref=bl_ast_dp_brandLogo_sto"
           }
         },
         "image_link_BQYzXd": {
           "type": "image_link",
           "settings": {
             "product_image_mob": "shopify:\/\/shop_images\/image_10_1.png",
-            "link": ""
+            "link": "https:\/\/www.heb.com\/search\/?q=ava+organics"
           }
         }
       },

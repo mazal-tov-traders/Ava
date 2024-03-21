@@ -175,7 +175,7 @@
     </div>
     <div class="footer__down-inner">
       <div class="wrapper_chef">
-        <span class="chef_text"> © 2024 Chef Bobo </span>
+        <span class="chef_text"> © 2024 Chef Bobo Brand Inc. All Right Reserved. </span>
       </div>
       <div class="page-links">
         <div class="privacy-policy__content">
@@ -209,28 +209,6 @@
           >
             Accessibility
           </a>
-          |
-          {% comment %}
-            <a
-              {% if section.settings.link_terms_use == blank %}
-                role="link" aria-disabled="true"
-              {% else %}
-                href="{{ section.settings.link_terms_use }}"
-              {% endif %}
-              class="p-link"
-              >Terms of Use</a
-            >
-            |
-          {% endcomment %}
-          <a
-            {% if section.settings.ad_choices == blank %}
-              role="link" aria-disabled="true"
-            {% else %}
-              href="{{ section.settings.ad_choices }}"
-            {% endif %}
-            class="p-link"
-            >Ad Choices</a
-          >
         </div>
         <div class="web_loft">
           <span class="web_loft-text"
@@ -358,11 +336,6 @@
       "type": "url",
       "id": "link_accessibility",
       "label": "Accessibility Page"
-    },
-    {
-      "type": "url",
-      "id": "ad_choices",
-      "label": "Ad Choices Page"
     }
   ],
   "presets": [

@@ -50,7 +50,8 @@
       "settings": {
         "title": "<p>Discover the craveable and guilt-free world of<strong> Ava Organics.<\/strong><\/p>",
         "background_image_1": "shopify:\/\/shop_images\/screen2_5.jpg",
-        "bottom_text": "Gluten-free, vegetarian and made with the world’s best organic coconuts."
+        "bottom_text": "Gluten-free, vegetarian and made with the world’s best organic coconuts.",
+        "id_for_anchor": "snacks"
       }
     },
     "banner_with_icons_qbFEyP": {
@@ -102,7 +103,8 @@
         "image_link_BQYzXd"
       ],
       "settings": {
-        "section_title": "Find Your Tropical Bliss"
+        "section_title": "Find Your Tropical Bliss",
+        "id_for_anchor": "wheretobuy"
       }
     },
     "banner_content_and_image_MkgQzJ": {
@@ -133,7 +135,8 @@
         "image_mob": "shopify:\/\/shop_images\/Frame_1000001960_1.jpg",
         "round_image": "shopify:\/\/shop_images\/Ellipse_14.jpg",
         "round_image_mob": "shopify:\/\/shop_images\/Ellipse_14.jpg",
-        "logo_background": "shopify:\/\/shop_images\/Frame_1000001969.png"
+        "logo_background": "shopify:\/\/shop_images\/Frame_1000001969.png",
+        "id_for_anchor": "aboutus"
       }
     },
     "custom_slider_product_LnfCfE": {
@@ -185,18 +188,18 @@
             "image": "shopify:\/\/shop_images\/Frame_1000001958.jpg",
             "border_color": "rgba(0,0,0,0)",
             "heading": "Great with ice cream",
-            "color_heading_label": "#2E2A2C",
+            "color_heading_label": "#2e2a2c",
             "icon": "shopify:\/\/shop_images\/Frame_1212068_1.png",
             "text": "1512 Reviews",
-            "color_text_label": "#2E2A2C",
+            "color_text_label": "#2e2a2c",
             "sub_title": "",
-            "color_sub_title_label": "#2E2A2C",
+            "color_sub_title_label": "#2e2a2c",
             "content": "These yummy treats are great with ice cream. I would love to see this company make this product as an ice cream cone.",
-            "color_content_label": "#2E2A2C",
+            "color_content_label": "#2e2a2c",
             "author": "Shyla",
-            "color_author_label": "#2E2A2C",
+            "color_author_label": "#2e2a2c",
             "date": "July 11, 2023",
-            "color_date_label": "#2E2A2C"
+            "color_date_label": "#2e2a2c"
           }
         }
       },

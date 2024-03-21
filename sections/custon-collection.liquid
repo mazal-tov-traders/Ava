@@ -1,6 +1,7 @@
 <div
   style="background: url('{{ section.settings.background_image_1 | image_url }}') center/cover no-repeat; max-width:1920px"
-  class="collection {% if section.settings.include_margins %}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+  class="collection{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+  id="{{ section.settings.id_for_anchor }}"
 >
   <div class="page-width">
     <div class="collection__wraper">
@@ -60,6 +61,11 @@
       "type": "inline_richtext",
       "id": "bottom_text",
       "label": "bottom text"
+    },
+    {
+      "type": "text",
+      "id": "id_for_anchor",
+      "label": "ID For Navigation Anchor"
     }
   ],
   "blocks": [

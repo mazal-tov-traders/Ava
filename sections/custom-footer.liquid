@@ -210,16 +210,18 @@
             Accessibility
           </a>
           |
-          <a
-            {% if section.settings.link_terms_use == blank %}
-              role="link" aria-disabled="true"
-            {% else %}
-              href="{{ section.settings.link_terms_use }}"
-            {% endif %}
-            class="p-link"
-            >Terms of Use</a
-          >
-          |
+          {% comment %}
+            <a
+              {% if section.settings.link_terms_use == blank %}
+                role="link" aria-disabled="true"
+              {% else %}
+                href="{{ section.settings.link_terms_use }}"
+              {% endif %}
+              class="p-link"
+              >Terms of Use</a
+            >
+            |
+          {% endcomment %}
           <a
             {% if section.settings.ad_choices == blank %}
               role="link" aria-disabled="true"
@@ -356,11 +358,6 @@
       "type": "url",
       "id": "link_accessibility",
       "label": "Accessibility Page"
-    },
-    {
-      "type": "url",
-      "id": "link_terms_use",
-      "label": "Terms of Use Page"
     },
     {
       "type": "url",

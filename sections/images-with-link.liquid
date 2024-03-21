@@ -1,4 +1,4 @@
-<div class="images-links">
+<div class="images-links" id="{{ section.settings.id_for_anchor }}">
   <div class="page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     {% if section.settings.section_title != blank %}
       <p class="images-links__title">{{ section.settings.section_title }}</p>
@@ -30,6 +30,11 @@
       "type": "inline_richtext",
       "id": "section_title",
       "label": "section title"
+    },
+    {
+      "type": "text",
+      "id": "id_for_anchor",
+      "label": "ID For Navigation Anchor"
     }
   ],
   "blocks": [

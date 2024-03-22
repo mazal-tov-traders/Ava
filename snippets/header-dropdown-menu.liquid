@@ -80,9 +80,8 @@
             </details>
           </header-menu>
         {%- else -%}
-          {% comment %} id="HeaderMenu-{{ link.handle }}" {% endcomment %}
           <a
-            id="navigation-anchor__link"
+            id="HeaderMenu-{{ link.handle }}"
             href="{{ link.url }}"
             class="header__menu-item list-menu__item link link--text focus-inset"
             {% if link.current %}

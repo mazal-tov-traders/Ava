@@ -8,7 +8,9 @@ body {
     margin: 0;
   }
 }
-
+*{
+  scroll-behavior: smooth;
+}
 .page-width {
   padding-left: 35px !important;
   padding-right: 35px !important;

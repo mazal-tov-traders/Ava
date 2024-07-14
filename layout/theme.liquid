@@ -316,6 +316,7 @@
         src: url('{{ "AvenirNextCyr-Medium.ttf" | asset_url }}') format('truetype');
       }
     </style>
+    {{ 'custom.css' | asset_url | stylesheet_tag }}
     {{ 'main.css' | asset_url | stylesheet_tag }}
   </head>
 

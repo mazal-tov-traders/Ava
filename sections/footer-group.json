@@ -43,12 +43,10 @@
         "image_mob": "shopify:\/\/shop_images\/Rectangle_4133617_2.jpg",
         "newsletter_enable": true,
         "newsletter_heading": "Get Your Ava On",
-        "content": "Sign up for emails to hear about promotions, new flavors and more! And when you do, you'll earn 15% off of your first order.",
+        "content": "Sign up for emails to hear about promotions, new flavors and more! And when you do, you'll get 10% off of your first order.",
         "link_terms_and_conditions": "shopify:\/\/pages\/terms-and-conditions",
         "link_police": "shopify:\/\/pages\/privacy-policy",
-        "link_accessibility": "shopify:\/\/pages\/accessibility",
-        "link_terms_use": "shopify:\/\/pages\/terms-of-use",
-        "ad_choices": "shopify:\/\/pages\/ad-choices"
+        "link_accessibility": "shopify:\/\/pages\/accessibility"
       }
     },
     "footer": {

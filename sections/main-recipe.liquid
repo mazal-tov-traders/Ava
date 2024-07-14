@@ -1,0 +1,204 @@
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+{% assign featured_posts = blogs.recipes.articles %}
+
+{%- style -%}
+  .section_recipe_index_padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section_recipe_index_padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="main-blog-wrapper">
+  <h1 class="title--primary" style="text-align:center;">Featured {{ blog.title | escape }}</h1>
+  <div class="main-blog page-width section_recipe_index_padding">
+    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
+      {% assign featured_count = section.settings.featured_count %}
+      {% for post in featured_posts %}
+        {% if post.tags contains 'featured' %}
+          {% assign featured_count = featured_count | minus: 1 %}
+          <div class="featured-post">
+            <div class="blog-articles__article article ">
+              {%- render 'recipe-card',
+                article: post,
+                media_height: section.settings.image_height,
+                media_aspect_ratio: article.image.aspect_ratio,
+                show_image: section.settings.show_image,
+                show_excerpt: true
+              -%}
+            </div>
+          </div>
+          {% if featured_count <= 0 %}
+            {% break %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- For Recent post usecase -->
+<div id="recent-recipes" class="fullwidth recent-posts">
+  <div class="recent-posts-wrapper page-width">
+    <div class="recent-post-title">
+      <h2 style="margin-top:45px;text-align:center;">Recent Receipes</h2>
+    </div>
+
+    <!-- Left side for recent posts -->
+    <div class="recent-post-container">
+      {%- paginate blog.articles by section.settings.articles_per_page -%}
+        <div class="main-blog page-width section_recipe_index_padding">
+          <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
+            {%- for article in blog.articles -%}
+              <div class="blog-articles__article article">
+                {%- render 'recipe-card',
+                  article: article,
+                  media_height: 'small',
+                  media_aspect_ratio: article.image.aspect_ratio,
+                  show_image: section.settings.show_image,
+                  show_excerpt: true
+                -%}
+              </div>
+            {%- endfor -%}
+          </div>
+
+          {%- if paginate.pages > 1 -%}
+            {%- render 'recipe-pagination', paginate: paginate -%}
+          {%- endif -%}
+        </div>
+      {%- endpaginate -%}
+    </div>
+
+    <!-- Right side for newsletter -->
+    <div class="recipe-sidebar">
+      <div class="newsletter">
+        <h2>Let's Be Friends</h2>
+        <p>Sign up for recipes, promos, and 15% OFF your first order</p>
+
+        <form action="/subscribe" method="post">
+          <input type="email" name="email" placeholder="Enter Your Email" style="padding: 10px; margin-bottom: 10px;">
+          <button
+            type="submit"
+            style="padding: 10px 20px; background-color: #007bff; color: #fff; border: none; cursor: pointer;"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Recipes",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Recipe Post Card"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "grid",
+          "label": "Grid"
+        },
+        {
+          "value": "collage",
+          "label": "Collage"
+        }
+      ],
+      "default": "collage",
+      "label": "Desktop Layout",
+      "info": "Recipe posts are stacked on mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": true,
+      "label": "Show featured image"
+    },
+    {
+      "type": "select",
+      "id": "image_height",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "medium",
+      "label": "Medium",
+      "info": "Featured image height"
+    },
+
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "featured_count",
+      "label": "Number of Featured Posts to Display",
+      "default": 3,
+      "min": 1,
+      "max": 10,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "articles_per_page",
+      "label": "Number of Articles Per Page",
+      "default": 2,
+      "min": 1,
+      "max": 10,
+      "step": 1
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Recipes",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,324 @@
+{%- style -%}
+  .section_padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section_padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="header_container">
+  <div class="content_layout_{{ section.settings.content_layout }} section_padding page-width">
+    <div
+      class="recipe_content_desktop_{{ section.settings.desktop_content_alignment }} recipe_content_mobile_{{ section.settings.mobile_content_alignment }}"
+    >
+      {%- for block in section.blocks -%}
+        {% case block.type %}
+          {%- when 'heading' -%}
+            <h2
+              class="recipe_text_heading inline-richtext {{ block.settings.heading_size }}"
+              style="color: {{ block.settings.heading_color }}"
+              {{ block.shopify_attributes }}
+            >
+              {{ block.settings.heading }}
+            </h2>
+          {%- when 'text' -%}
+            <div
+              class="recipe_text {{ block.settings.text_style }}"
+              {{ block.shopify_attributes }}
+              style="color: {{ block.settings.text_color }}"
+            >
+              {{ block.settings.text }}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+<style>
+  {% if section.settings.image_desktop != blank %}
+      .header_container {
+          background-image: url("{{section.settings.image_mobile | image_url: width: 920}}");
+      }
+  {% endif %}
+
+  {% if section.settings.image_mobile != blank %}
+      @media (min-width: 750px) {
+          .header_container {
+              background-image: url("{{section.settings.image_desktop | image_url: width: 1920}}");
+          }
+      }
+  {% endif %}
+</style>
+{% comment %} style {% endcomment %}
+<style>
+  /* Blog Recipes Header Style */
+
+  .header_container {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .header_container .recipe_text_heading {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700 !important;
+    font-size: 50px;
+    line-height: 61px;
+    color: #275d38;
+    margin: 0;
+    letter-spacing: 0;
+  }
+
+  .header_container .recipe_text.subtitle p {
+    font-size: 1.8rem;
+    line-height: calc(1 + 0.8 / var(--font-body-scale));
+    letter-spacing: 0.06rem;
+    color: #275d38;
+  }
+
+  .header_container .recipe_content_desktop_left {
+    max-width: 550px;
+  }
+
+  @media (max-width: 1024px) {
+    .header_container .section_padding {
+      padding: 60px 50px;
+    }
+
+    .header_container .recipe_text_heading {
+      font-size: 32px;
+      line-height: 39px;
+      max-width: 360px;
+      margin-right: auto;
+    }
+
+    .header_container .recipe_text.subtitle p {
+      font-size: 16px;
+      line-height: 28px;
+      max-width: 360px;
+      margin-right: auto;
+    }
+  }
+
+  @media (max-width: 750px) {
+    .header_container .section_padding {
+      min-height: 152vw;
+      background-position: bottom;
+    }
+
+    .header_container .recipe_content_mobile_center {
+      text-align: center;
+    }
+
+    .header_container .recipe_text_heading {
+      margin: 0 auto;
+      max-width: 260px;
+    }
+
+    .header_container .recipe_text.subtitle p {
+      margin: 15px auto 0;
+      max-width: 100%;
+    }
+  }
+</style>
+{% comment %}  {% endcomment %}
+{% schema %}
+{
+  "name": "Recipe Index Header",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "left"
+        },
+        {
+          "value": "center",
+          "label": "center"
+        },
+        {
+          "value": "right",
+          "label": "right"
+        }
+      ],
+      "default": "left",
+      "label": "Desktop content alignment"
+    },
+    {
+      "type": "select",
+      "id": "content_layout",
+      "options": [
+        {
+          "value": "no-overlap",
+          "label": "No overlap"
+        },
+        {
+          "value": "overlap",
+          "label": "Overlap"
+        }
+      ],
+      "default": "no-overlap",
+      "label": "Content Layout"
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "left"
+        },
+        {
+          "value": "center",
+          "label": "center"
+        },
+        {
+          "value": "right",
+          "label": "right"
+        }
+      ],
+      "default": "left",
+      "label": "Mobile content alignment"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "Content Heading",
+          "label": "Heading"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "Small"
+            },
+            {
+              "value": "h1",
+              "label": "Medium"
+            },
+            {
+              "value": "h0",
+              "label": "Large"
+            }
+          ],
+          "default": "h1",
+          "label": "Heading"
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "default": "#000000",
+          "label": "Heading color"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Content Text</p>",
+          "label": "Content"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "body",
+              "label": "Body"
+            },
+            {
+              "value": "subtitle",
+              "label": "Subtitle"
+            }
+          ],
+          "default": "body",
+          "label": "Text Style"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "default": "#000000",
+          "label": "Text Color"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Recipe Index Header",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

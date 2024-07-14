@@ -1,0 +1,620 @@
+<script src="{{ 'swiper.min.js' | asset_url }}"></script>
+{% assign estimated_time = article.metafields.custom.recipe_estimated_time %}
+{% assign estimated_time_in_minutes = estimated_time | replace: 'min', 'Minutes' | replace: 'MIN', 'MINUTES' %}  
+{{ 'swiper.min.css' | asset_url | stylesheet_tag }}
+<style>
+  /* Reset default margin and padding for all elements */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .recipe_post {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Style for the recipe info section */
+  .recipe_info {
+    margin-bottom: 20px;
+  }
+</style>
+<article class="recipe_post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="recipe_post_wrapper">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'featured_image' -%}
+          {%- if article.image -%}
+            <div class="recipe_post_hero_container">
+              <div class="recipe_post_hero_container-wrapper">
+                <div class="recipe_post_image_container {{ block.settings.image_height }}" itemprop="image">
+                  <img src="{{ article.image | image_url }}" loading="eager" fetchpriority="high" alt="{{ article.image.alt | escape }}" width="300" height="300">
+                </div>
+                <div>
+                  {{ article.metafields.custom.secondary_image |metafield_tag }}
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+
+          <div class="recipe-post_text-container">
+        {%- when 'title' -%}
+          <div class="recipe_post_meta_container">
+            {% if article.metafields.custom.recipe_serves %}
+              <div class="recipe_post_meta_item">
+                <h4>Serves</h4> <span class="recipe-meta serves">{{ article.metafields.custom.recipe_serves }}</span>
+              </div>
+            {% endif %}
+
+            
+              {% if article.metafields.custom.recipe_estimated_time %}
+                <div class="recipe_post_meta_item">
+                  <h4>Estimated Time</h4> <span class="recipe-meta estimated-time">{{ estimated_time_in_minutes }}</span>
+                </div>
+            {% endif %}
+            </div>
+          
+            <header {{ block.shopify_attributes }}>
+              <h1
+                class="recipe_post_text_heading "
+                style="color:{{ block.settings.text_color}};font-weight:{% if block.settings.text_style == 'bold' %} bold{% elsif block.settings.text_style == 'bolder' %} bolder{% endif %}"
+                itemprop="headline"
+              >
+                {{ article.title | escape }}
+              </h1>
+            </header>
+
+        {%- when 'content' -%}
+          <div
+            class="recipe_post_desc"
+            itemprop="articleBody"
+            style="color:{{ block.settings.content_color }};font-size:{{ block.settings.content_size }}"
+            {{ block.shopify_attributes }}
+          >
+            {{ article.content }}
+          </div>
+      {%- endcase -%}
+         
+    {%- endfor -%}
+
+    <div class="recipe_info">
+      <div class="recipe_ingredients_container">
+        {% if article.metafields.custom.recipe_ingredients %}
+          <h3>Ingredients:</h3>
+          {{ article.metafields.custom.recipe_ingredients | metafield_tag }}
+        {% endif %}
+      </div>
+      <div class="recipe_instructions_container">
+        {% if article.metafields.custom.recipe_instructions %}
+          <h3>Instructions:</h3>
+          {{ article.metafields.custom.recipe_instructions | metafield_tag }}
+        {% endif %}
+      </div>
+    </div>
+
+    {% assign articles = blogs.recipes.articles %}
+    {% assign current_article_index = -1 %}
+    {% for i in (0..articles.size) %}
+      {% if articles[i].url == article.url %}
+        {% assign current_article_index = i %}
+      {% endif %}
+    {% endfor %}
+
+    {% assign next_article_index = current_article_index | plus: 1 %}
+    {% assign previous_article_index = current_article_index | minus: 1 %}
+    <div class="recipe_pagination_links">
+      <div class="recipe_next_link">
+        {% if next_article_index < articles.size %}
+          <a href="{{ articles[next_article_index].url }}">Next: {{ articles[next_article_index].title }}</a>
+        {% endif %}
+      </div>
+      <div class="recipe_previous_link">
+        {% if previous_article_index >= 0 %}
+          <a href="{{ articles[previous_article_index].url }}"
+            >Previous: {{ articles[previous_article_index].title -}}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+          </div>
+  </div>
+
+
+  {% comment %}
+  Display the products used in this recipe
+  {% endcomment %}
+  {% if article.metafields.custom.products_used_in_recipe %}
+<div class="product_container ">
+  <div class="product_container_wrapper page-width">
+  
+    
+    
+    
+    <h3 class="heading_product_card_title">Product Used in the Recipe</h3>
+  
+  
+  {% for product in article.metafields.custom.products_used_in_recipe.value %}
+   
+
+    <div class="product_card">
+      <div class="product_media">
+        <a href="{{ product.url }}" class="product__img">
+          {% if product.images[0] != blank %}
+            <img loading="lazy" src="{{ product.images[0] | image_url: width: 520  }}" alt="product photo">
+          {% endif %}
+        </a>
+      </div>
+      <div class="product_info">
+        <div class="product_card_body">
+          <h5 class="product_card_subtitle">{{ product.metafields.custom.text_subtitle }}</h5>
+          <h4 class="product_card_name">{{ product.title }}</h4>
+          <p class="product_card_description">{{ product.description }}</p>
+
+          <div class="product_icon_set">
+            {% render 'safe-for-school' %}
+            {% render 'gluten-free' %}
+            {% render 'vegan' %}
+            {% render 'non-gmo-ingredient' %}
+            {% render 'u' %}
+            {% render 'organic' %}
+          </div>
+
+          <div class="product_card_bottom">
+       
+              {% if product.price > 0 %}
+                <div class="product_price">
+                  <div class="product_button">
+                    <a href="{{ product.url }}" class="product_button_link"> Buy Now {{ product.price | money_without_trailing_zeros | split: '.' | first -}}
+                    <sup>{{ product.price | money_without_trailing_zeros | split: '.' | last }}</sup>
+                    {% if product.price != product.price_max %}
+                     <span> - </span> {{ product.price_max | money_without_trailing_zeros | split: '.' | first -}}
+                      <sup>{{ product.price_max | money_without_trailing_zeros | split: '.' | last }}</sup>
+                    {% endif %}
+                    </a>
+                    
+            
+
+
+                    
+                    
+                  </div>
+    
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- For Quantity Use Case -->
+       <!-- <div class="quantity-btns__wrapper">
+                <div
+                  id="Quantity-Form-{{ section.id }}"
+                  class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
+                  {{ block.shopify_attributes }}
+                >
+                  {% comment %} TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter {% endcomment %}
+                  {% # theme-check-disable %}
+                  {%- assign cart_qty = cart | item_count_for_variant: product.selected_or_first_available_variant.id -%}
+                  {% # theme-check-enable %}
+                  <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
+                    {{ 'products.product.quantity.label' | t }}
+                    <span class="quantity__rules-cart no-js-hidden{% if cart_qty == 0 %} hidden{% endif %}">
+                      <span class="loading-overlay hidden">
+                        <span class="loading-overlay__spinner">
+                          <svg
+                            aria-hidden="true"
+                            focusable="false"
+                            class="spinner"
+                            viewBox="0 0 66 66"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                          </svg>
+                        </span>
+                      </span>
+                      <span>({{- 'products.product.quantity.in_cart_html' | t: quantity: cart_qty -}})</span>
+                    </span>
+                  </label>
+                  <quantity-input class="quantity">
+                    <button class="quantity__button no-js-hidden" name="minus" type="button">
+                      <span class="visually-hidden">
+                        {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
+                      </span>
+                      {% render 'icon-minus' %}
+                    </button>
+                    <input
+                      class="quantity__input"
+                      type="number"
+                      name="quantity"
+                      id="Quantity-{{ section.id }}"
+                      data-cart-quantity="{{ cart_qty }}"
+                      data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                      min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                      {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
+                        data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                        max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                      {% endif %}
+                      step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
+                      value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                      form="{{ product_form_id }}"
+                      readonly
+                    />
+                    <button class="quantity__button no-js-hidden" name="plus" type="button">
+                      <span class="visually-hidden">
+                        {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
+                      </span>
+                      {% render 'icon-plus' %}
+                    </button>
+                  </quantity-input>
+                  <div class="quantity__rules caption no-js-hidden">
+                    {%- if product.selected_or_first_available_variant.quantity_rule.increment > 1 -%}
+                      <span class="divider">
+                        {{-
+                          'products.product.quantity.multiples_of'
+                          | t: quantity: product.selected_or_first_available_variant.quantity_rule.increment
+                        -}}
+                      </span>
+                    {%- endif -%}
+                    {%- if product.selected_or_first_available_variant.quantity_rule.min > 1 -%}
+                      <span class="divider">
+                        {{-
+                          'products.product.quantity.minimum_of'
+                          | t: quantity: product.selected_or_first_available_variant.quantity_rule.min
+                        -}}
+                      </span>
+                    {%- endif -%}
+                    {%- if product.selected_or_first_available_variant.quantity_rule.max != null -%}
+                      <span class="divider">
+                        {{-
+                          'products.product.quantity.maximum_of'
+                          | t: quantity: product.selected_or_first_available_variant.quantity_rule.max
+                        -}}
+                      </span>
+                    {%- endif -%}
+                  </div>
+                </div>
+                <div class="buy-buttons__wrap">
+                  {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
+                 </div>
+              </div>
+ -->
+
+      
+    </div>
+  {%- endfor -%}
+  
+  
+  </div>
+</div>
+{%  endif %}
+  
+  {% comment %}
+    Get related articles based on a common tag
+  {% endcomment %}
+  {% assign related_recipes_limit = 4 %}
+  {% assign related_recipes_count = 0 %}
+  {% assign related_recipes_ids = '' %}
+
+  {% if article.tags.size > 0 %}
+    <div class="related-recipes fullwidth">
+    <div class="related_recipe_container page-width">
+      
+      <h3>Similar Recipes</h3>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+         {% for related_recipe in blogs.recipes.articles %}
+  {% if related_recipe.id != article.id and related_recipes_count < related_recipes_limit %}
+    {% for tag in related_recipe.tags %}
+      {% if article.tags contains tag %}
+        {% unless related_recipes_ids contains related_recipe.id %}
+          {% assign related_recipes_ids = related_recipes_ids | append: related_recipe.id | append: ',' %}
+          <div class="swiper-slide">
+            <div class="related_recipe">
+              <div class="related_recipe_image">
+                {% if related_recipe.image %}
+                  <div class="related_recipe_image_hero-container">
+                    <div class="related_recipe_image_container" itemprop="image">
+                      <img
+                        src="{{ related_recipe.image | image_url: width: 200 }}"
+                        loading="lazy"
+                        width="200"
+                        height="200"
+                        alt="{{ related_recipe.title | escape }}"
+                      >
+                    </div>
+                  </div>
+                {% else %}
+                  <div class="no-image-placeholder">No Image</div>
+                {% endif %}
+              </div>
+              <div class="related_recipe_details">
+                <h4 class="related_recipe_title">
+                  <div class="related_recipe_metafields">
+                    {% if related_recipe.metafields.custom.recipe_serves %}
+                      <div class="recipe_post_meta_item">
+                        <h4>Serves</h4> <span class="recipe-meta serves">{{ related_recipe.metafields.custom.recipe_serves }}</span>
+                      </div>
+                    {% endif %}
+                    {% if related_recipe.metafields.custom.recipe_estimated_time %}
+                      <div class="recipe_post_meta_item">
+                        <h4>Estimated Time</h4> <span class="recipe-meta estimated-time">{{ related_recipe.metafields.custom.recipe_estimated_time }}</span>
+                      </div>
+                    {% endif %}
+                  </div>
+
+                  <h4 class="related_recipe_title">
+                    {{ related_recipe.title }}
+                  </h4>
+
+                  <a
+                    class="related_recipe_read_more_url"
+                    href="{{ related_recipe.url }}"
+                    style="color: green; text-decoration: none;"
+                    >Read More</a
+                  >
+                </h4>
+              </div>
+            </div>
+          </div>
+          {% assign related_recipes_count = related_recipes_count | plus: 1 %}
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+        <!-- Navigation Buttons 
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        -->
+      </div>
+      
+    </div>
+    </div>
+</article>
+    <style>
+                      .related_recipes {
+                        max-width: 100%;
+                        overflow: hidden;
+                        position: relative;
+                      }
+
+                      .swiper-container {
+                        max-width: 100%;
+                        overflow: hidden;
+                        position: relative;
+                      }
+
+                      .swiper-slide {
+                        width: calc(100% / 3);
+                      }
+
+                      .swiper-pagination {
+                        position: absolute;
+                        bottom: 10px;
+                        width: 100%;
+                        text-align: center;
+                      }
+
+                      .swiper-pagination-bullet {
+                        width: 10px;
+                        height: 10px;
+                        background-color: #007bff;
+                      }
+
+                      .swiper-pagination-bullet-active {
+                        background-color: #0056b3;
+                      }
+
+              /* Navigation Buttons Styles */
+      .swiper-button-next,
+      .swiper-button-prev {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+      }
+
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-style: solid;
+        border-width: 8px 8px 0 8px;
+        border-color: #333 transparent transparent transparent;
+
+
+      }
+
+
+      .swiper-button-prev {
+        left: 10px;
+        transform: rotate(90deg);
+                display:visible;
+
+      }
+
+      .swiper-button-next {
+        right: 10px;
+        transform: rotate(-90deg);
+                display:visible;
+
+      }
+    </style>
+
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+         
+          1280:{
+            slidesPerView:2,
+          }
+        }
+      });
+    </script>
+  {% endif %}
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "articleBody": {{ article.content | strip_html | json }},
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": {{ request.origin | append: page.url | json }}
+    },
+    "headline": {{ article.title | json }},
+    {% if article.excerpt != blank %}
+      "description": {{ article.excerpt | strip_html | json }},
+    {% endif %}
+    {% if article.image %}
+      "image": [
+        {{ article | image_url: width: 1920 | prepend: "https:" | json }}
+      ]
+    {% endif %}
+    }
+</script>
+
+{% schema %}
+{
+  "name": "Recipe Post",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "featured_image",
+      "name": "Featured Image",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "image_height",
+          "options": [
+            {
+              "value": "adapt",
+              "label": "Adapt"
+            },
+            {
+              "value": "small",
+              "label": "Small"
+            },
+            {
+              "value": "medium",
+              "label": "Medium"
+            },
+            {
+              "value": "large",
+              "label": "Large"
+            }
+          ],
+          "default": "adapt",
+          "label": "Featured image height",
+          "info": "For best results, use an image with a 16:9 aspect ratio"
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "Title",
+      "limit": 1,
+      "settings": [
+       {
+  "type": "select",
+  "id": "text_style",
+  "options": [
+    {
+      "value": "normal",
+      "label": "Normal"
+    },
+    {
+      "value": "bold",
+      "label": "Bold"
+    },
+    {
+      "value": "bolder",
+      "label": "Bolder"
+    }
+  ],
+  "default": "normal",
+  "label": "Text Style"
+},
+
+        {
+          "type":"color",
+          "id":"text_color",
+          "default":"#000000",
+          "label":"Text Color"
+        }
+      ]
+    },
+     {
+      "type": "content",
+      "name": "Content Description",
+      "limit": 1,
+      "settings": [
+       {
+  "type": "select",
+  "id": "content_size",
+  "options": [
+    {
+      "value": "small",
+      "label": "Small"
+    },
+    {
+      "value": "medium",
+      "label": "Medium"
+    },
+    {
+      "value": "large",
+      "label": "Large"
+    }
+  ],
+  "default": "medium",
+  "label": "Font Size"
+}
+,
+        {
+          "type":"color",
+          "id":"content_color",
+          "default":"#000000",
+          "label":"Content color"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Recipe Post",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

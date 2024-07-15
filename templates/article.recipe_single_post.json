@@ -2,43 +2,45 @@
   "sections": {
     "main": {
       "type": "main-article",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "main_recipe_single_post_DaV7q4": {
+      "type": "main-recipe_single_post",
       "blocks": {
-        "featured_image": {
+        "featured_image_8YG6iK": {
           "type": "featured_image",
           "settings": {
             "image_height": "adapt"
           }
         },
-        "title": {
+        "title_TzkgWU": {
           "type": "title",
           "settings": {
-            "blog_show_date": true,
-            "blog_show_author": false
+            "text_style": "normal",
+            "text_color": "#000000"
           }
         },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
-        },
-        "content": {
+        "content_Njbhdx": {
           "type": "content",
           "settings": {
+            "content_size": "medium",
+            "content_color": "#000000"
           }
         }
       },
       "block_order": [
-        "featured_image",
-        "title",
-        "share",
-        "content"
+        "featured_image_8YG6iK",
+        "title_TzkgWU",
+        "content_Njbhdx"
       ],
       "settings": {
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "main_recipe_single_post_DaV7q4"
   ]
 }

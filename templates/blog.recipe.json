@@ -13,10 +13,10 @@
         "padding_bottom": 36
       }
     },
-    "recipe_index_header_GFFYWR": {
+    "recipe_index_header_ebkx84": {
       "type": "recipe-index-header",
       "blocks": {
-        "heading_VFFWkJ": {
+        "heading_cL3mjF": {
           "type": "heading",
           "settings": {
             "heading": "Content Heading",
@@ -24,7 +24,7 @@
             "heading_color": "#000000"
           }
         },
-        "text_P7wWRh": {
+        "text_6WzbtN": {
           "type": "text",
           "settings": {
             "text": "<p>Content Text<\/p>",
@@ -34,10 +34,12 @@
         }
       },
       "block_order": [
-        "heading_VFFWkJ",
-        "text_P7wWRh"
+        "heading_cL3mjF",
+        "text_6WzbtN"
       ],
       "settings": {
+        "image_desktop": "shopify:\/\/shop_images\/Frame_1212250.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/Rectangle_4133617_2.jpg",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
         "mobile_content_alignment": "left",
@@ -45,7 +47,7 @@
         "padding_bottom": 36
       }
     },
-    "main_recipe_7Yn7aF": {
+    "main_recipe_nEEEdL": {
       "type": "main-recipe",
       "settings": {
         "layout": "collage",
@@ -60,7 +62,7 @@
   },
   "order": [
     "main",
-    "recipe_index_header_GFFYWR",
-    "main_recipe_7Yn7aF"
+    "recipe_index_header_ebkx84",
+    "main_recipe_nEEEdL"
   ]
 }

@@ -5,8 +5,8 @@
   </g>
   <g id="clock" transform="translate(22.665 22.665)">
     <g id="clock-2" data-name="clock" transform="translate(-11 -11)">
-      <path id="Path_471" data-name="Path 471" d="M13.335,1A12.335,12.335,0,1,0,25.67,13.335,12.335,12.335,0,0,0,13.335,1Zm0,22.427A10.092,10.092,0,1,1,23.427,13.335,10.092,10.092,0,0,1,13.335,23.427Z" transform="translate(-1 -1)" fill="#275d38" stroke="#682145" stroke-width="0.5"/>
-      <path id="Path_472" data-name="Path 472" d="M13,11.586V6a1,1,0,0,0-2,0v6a1,1,0,0,0,.293.707l3,3a1,1,0,1,0,1.414-1.414Z" transform="translate(0.571 -0.029)" fill="#275d38" stroke="#682145" stroke-width="0.5"/>
+      <path id="Path_471" data-name="Path 471" d="M13.335,1A12.335,12.335,0,1,0,25.67,13.335,12.335,12.335,0,0,0,13.335,1Zm0,22.427A10.092,10.092,0,1,1,23.427,13.335,10.092,10.092,0,0,1,13.335,23.427Z" transform="translate(-1 -1)" fill="#682145" stroke="#682145" stroke-width="0.5"/>
+      <path id="Path_472" data-name="Path 472" d="M13,11.586V6a1,1,0,0,0-2,0v6a1,1,0,0,0,.293.707l3,3a1,1,0,1,0,1.414-1.414Z" transform="translate(0.571 -0.029)" fill="#682145" stroke="#682145" stroke-width="0.5"/>
     </g>
   </g>
 </svg>

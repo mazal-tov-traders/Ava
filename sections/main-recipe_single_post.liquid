@@ -83,7 +83,7 @@
     <div class="recipe_info">
       <div class="recipe_ingredients_container">
         {% if article.metafields.custom.recipe_ingredients %}
-          <h3>Ingredients:</h3>
+          <h3><span>{% render 'recipe-leaf' %}</span>Ingredients:</h3>
           {{ article.metafields.custom.recipe_ingredients | metafield_tag }}
         {% endif %}
       </div>

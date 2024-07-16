@@ -19,7 +19,7 @@
         "heading_cL3mjF": {
           "type": "heading",
           "settings": {
-            "heading": "Content Heading",
+            "heading": "",
             "heading_size": "h1",
             "heading_color": "#000000"
           }
@@ -27,7 +27,7 @@
         "text_6WzbtN": {
           "type": "text",
           "settings": {
-            "text": "<p>Content Text<\/p>",
+            "text": "",
             "text_style": "body",
             "text_color": "#000000"
           }

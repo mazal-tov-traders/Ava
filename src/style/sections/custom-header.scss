@@ -300,3 +300,11 @@
   }
 }
 
+/* custom-style  */
+.header__active-menu-item{
+  color: #fff;
+text-decoration: none;
+}
+.header__menu-item:hover .header__active-menu-item {
+text-decoration-thickness: 0.1rem;
+}

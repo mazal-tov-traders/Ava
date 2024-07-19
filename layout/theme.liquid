@@ -316,8 +316,22 @@
         src: url('{{ "AvenirNextCyr-Medium.ttf" | asset_url }}') format('truetype');
       }
     </style>
+        <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/{{CcU31J2u0HfRDDgKwTIBHSkOhDKbsGOEb83TENKx}}?languageCode={{ localization.language.iso_code | escape }}"  async></script>
+    <script
+      src="https://cdn-widgetsrepository.yotpo.com/v1/loader/aPPxwfKg8Kv17GsA2YCzJgwaEjA87IWZvOplAkR8?languageCode={{ localization.language.iso_code | escape }}"
+      async
+    ></script>
     {{ 'custom.css' | asset_url | stylesheet_tag }}
     {{ 'main.css' | asset_url | stylesheet_tag }}
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WX9GJ9F');</script>
+
+    
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
